@@ -1871,8 +1871,6 @@
             "hidden": true,
             "result": {
               "status": "passed",
-<<<<<<<< HEAD:reports/json-logic-js.json
-========
               "duration": 10499
             }
           },
