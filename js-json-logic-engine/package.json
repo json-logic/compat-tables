@@ -4,7 +4,7 @@
   "main": "jsonlogic.js",
   "scripts": {
     "test": "cucumber-js",
-    "test:report": "cucumber-js --format html:cucumber-report.html"
+    "test:report": "cucumber-js --format json:report.json"
   },
   "keywords": [],
   "author": "",
