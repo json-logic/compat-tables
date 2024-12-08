@@ -32,6 +32,15 @@ def load_test_results(filename):
         print(f"Warning: File {filename} not found")
         return []
 
+def get_status_emoji(passed, total):
+    pass_rate = passed / total
+    if pass_rate == 1.0:
+        return "✅"  # All passed
+    elif pass_rate > 0:
+        return "⚠️"  # Partial pass
+    elif pass_rate == 0:
+        return "❌"  # All failed
+
 def compare_libraries():
     files = [
         'rust-datalogic-rs.json',
@@ -54,8 +63,14 @@ def compare_libraries():
         'status': lambda x: (x == 'passed').sum()
     }).reset_index()
     
-    # Format as passed/total
-    grouped['result'] = grouped['status'].astype(str) + '/' + grouped['scenario'].astype(str)
+    # Format as passed/total with emoji
+    def format_result(row):
+        passed = row['status']
+        total = row['scenario']
+        emoji = get_status_emoji(passed, total)
+        return f"{passed}/{total} {emoji}"
+    
+    grouped['result'] = grouped.apply(format_result, axis=1)
     
     # Pivot to get features as columns
     summary = grouped.pivot(
@@ -64,12 +79,16 @@ def compare_libraries():
         values='result'
     )
     
-    # Add total column
+    # Add total column with emoji
     totals = df.groupby('library').agg({
         'scenario': 'count',
         'status': lambda x: (x == 'passed').sum()
     })
-    summary['Total'] = totals['status'].astype(str) + '/' + totals['scenario'].astype(str)
+    
+    summary['Total'] = totals.apply(
+        lambda row: f"{row['status']}/{row['scenario']} {get_status_emoji(row['status'], row['scenario'])}", 
+        axis=1
+    )
     
     # Console output
     print("\nTest Results Summary:")
