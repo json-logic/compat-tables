@@ -1,5 +1,5 @@
-const { Before, Given, When, Then, After } = require('@cucumber/cucumber');
-const jsonLogic = require('json-logic-js');
+const { Before, Given, When, Then } = require('@cucumber/cucumber');
+const { LogicEngine } = require('json-logic-engine');
 const assert = require('assert');
 
 class JSONLogicWorld {
@@ -10,7 +10,7 @@ class JSONLogicWorld {
     }
 }
 
-let totalExecutionTime = 0;
+const engine = new LogicEngine(undefined, { compatible: true });
 
 Before(function() {
     this.world = new JSONLogicWorld();
@@ -21,8 +21,7 @@ Given('the rule {string}', function(ruleStr) {
     try {
         this.world.rule = JSON.parse(cleanStr);
     } catch (e) {
-        this.world.rule = cleanStr;
-        // throw new Error(`Failed to parse rule JSON: ${e}\nInput was: ${cleanStr}`);
+        throw new Error(`Failed to parse rule JSON: ${e}\nInput was: ${cleanStr}`);
     }
 });
 
@@ -31,20 +30,18 @@ Given('the data {string}', function(dataStr) {
     try {
         this.world.data = JSON.parse(cleanStr);
     } catch (e) {
-        this.world.data = cleanStr;
-        // throw new Error(`Failed to parse data JSON: ${e}\nInput was: ${cleanStr}`);
+        throw new Error(`Failed to parse data JSON: ${e}\nInput was: ${cleanStr}`);
     }
 });
 
 When('I evaluate the rule', function() {
     const start = process.hrtime();
-    this.world.result = jsonLogic.apply(
+    this.world.result = engine.run(
         this.world.rule,
         this.world.data || null
     );
     const [seconds, nanoseconds] = process.hrtime(start);
     this.executionTime = seconds * 1e9 + nanoseconds;
-    totalExecutionTime += this.executionTime;
 });
 
 Then('the result should be {string}', function(expected) {
