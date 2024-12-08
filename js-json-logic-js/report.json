@@ -2066,7 +2066,7 @@
             "result": {
               "status": "failed",
               "duration": 792457,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -2138,7 +2138,7 @@
             "result": {
               "status": "failed",
               "duration": 340749,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -2210,7 +2210,7 @@
             "result": {
               "status": "failed",
               "duration": 81040,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -2282,7 +2282,7 @@
             "result": {
               "status": "failed",
               "duration": 54000,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -2354,7 +2354,7 @@
             "result": {
               "status": "failed",
               "duration": 58000,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -2426,7 +2426,7 @@
             "result": {
               "status": "failed",
               "duration": 69458,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'b'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'b'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -2498,7 +2498,7 @@
             "result": {
               "status": "failed",
               "duration": 54374,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -2570,7 +2570,7 @@
             "result": {
               "status": "failed",
               "duration": 66874,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -2642,7 +2642,7 @@
             "result": {
               "status": "failed",
               "duration": 69999,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a',\n  'b'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a',\n  'b'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -2714,7 +2714,7 @@
             "result": {
               "status": "failed",
               "duration": 128583,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a',\n  'b'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a',\n  'b'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -2786,7 +2786,7 @@
             "result": {
               "status": "failed",
               "duration": 181917,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a.b'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a.b'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -2858,7 +2858,7 @@
             "result": {
               "status": "failed",
               "duration": 63583,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a.b'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a.b'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -2930,7 +2930,7 @@
             "result": {
               "status": "failed",
               "duration": 58542,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a.b'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a.b'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -3002,7 +3002,7 @@
             "result": {
               "status": "failed",
               "duration": 43833,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -3074,7 +3074,7 @@
             "result": {
               "status": "failed",
               "duration": 57875,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a.c'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a.c'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -3146,7 +3146,7 @@
             "result": {
               "status": "failed",
               "duration": 98124,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -3218,7 +3218,7 @@
             "result": {
               "status": "failed",
               "duration": 44167,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -3290,7 +3290,7 @@
             "result": {
               "status": "failed",
               "duration": 47582,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -3362,7 +3362,7 @@
             "result": {
               "status": "failed",
               "duration": 131292,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a',\n  'b'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a',\n  'b'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -3434,7 +3434,7 @@
             "result": {
               "status": "failed",
               "duration": 42165,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -3506,7 +3506,7 @@
             "result": {
               "status": "failed",
               "duration": 39708,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -3578,7 +3578,7 @@
             "result": {
               "status": "failed",
               "duration": 66624,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -3650,7 +3650,7 @@
             "result": {
               "status": "failed",
               "duration": 58167,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'b',\n  'c'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'b',\n  'c'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -3722,7 +3722,7 @@
             "result": {
               "status": "failed",
               "duration": 56750,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a',\n  'b',\n  'c'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a',\n  'b',\n  'c'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -3936,7 +3936,7 @@
             "result": {
               "status": "failed",
               "duration": 51707,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'vin',\n  'apr'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'vin',\n  'apr'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -4008,7 +4008,7 @@
             "result": {
               "status": "failed",
               "duration": 51708,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'vin'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'vin'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -4080,7 +4080,7 @@
             "result": {
               "status": "failed",
               "duration": 72209,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1,\n  2,\n  3\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1,\n  2,\n  3\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -4152,7 +4152,7 @@
             "result": {
               "status": "failed",
               "duration": 40333,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -4224,7 +4224,7 @@
             "result": {
               "status": "failed",
               "duration": 164417,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  2,\n  3\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  2,\n  3\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -4296,7 +4296,7 @@
             "result": {
               "status": "failed",
               "duration": 43499,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1,\n  3\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1,\n  3\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -4368,7 +4368,7 @@
             "result": {
               "status": "failed",
               "duration": 164499,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  2,\n  4,\n  6\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  2,\n  4,\n  6\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -4440,7 +4440,7 @@
             "result": {
               "status": "failed",
               "duration": 49709,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -4512,7 +4512,7 @@
             "result": {
               "status": "failed",
               "duration": 246333,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1,\n  2,\n  3\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1,\n  2,\n  3\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -7151,7 +7151,7 @@
             "result": {
               "status": "failed",
               "duration": 367624,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a',\n  'b'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  'a',\n  'b'\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -14831,7 +14831,7 @@
             "result": {
               "status": "failed",
               "duration": 79082,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -14903,7 +14903,7 @@
             "result": {
               "status": "failed",
               "duration": 64125,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -14975,7 +14975,7 @@
             "result": {
               "status": "failed",
               "duration": 48166,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -15047,7 +15047,7 @@
             "result": {
               "status": "failed",
               "duration": 60166,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1,\n  2\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1,\n  2\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -15119,7 +15119,7 @@
             "result": {
               "status": "failed",
               "duration": 170332,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1,\n  2,\n  3\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1,\n  2,\n  3\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -15191,7 +15191,7 @@
             "result": {
               "status": "failed",
               "duration": 45833,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1,\n  2,\n  3\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1,\n  2,\n  3\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -15263,7 +15263,7 @@
             "result": {
               "status": "failed",
               "duration": 42749,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1,\n  2,\n  3\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1,\n  2,\n  3\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -15335,7 +15335,7 @@
             "result": {
               "status": "failed",
               "duration": 44583,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -15407,7 +15407,7 @@
             "result": {
               "status": "failed",
               "duration": 40292,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1,\n  2\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1,\n  2\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -15479,7 +15479,7 @@
             "result": {
               "status": "failed",
               "duration": 37459,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1,\n  2\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1,\n  2\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -17255,7 +17255,7 @@
             "result": {
               "status": "failed",
               "duration": 46624,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -19741,7 +19741,7 @@
             "result": {
               "status": "failed",
               "duration": 51584,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1,\n  2,\n  3\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  1,\n  2,\n  3\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
@@ -19813,7 +19813,7 @@
             "result": {
               "status": "failed",
               "duration": 40874,
-              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  42\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-engine/jsonlogic.js:54:12)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Values have same structure but are not reference-equal:\n\n[\n  42\n]\n\n    + expected - actual\n\n\n    at World.<anonymous> (/Users/codetiger/Development/test-suite/js-json-logic-js/jsonlogic.js:54:12)"
             }
           }
         ],
