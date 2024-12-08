@@ -1,12 +1,14 @@
-python3 test-data/convert.py test-data/test-cases.json features
-cargo test --test rust-jsonlogic --release
-cargo test --test rust-jsonlogic-rs --release
-cargo test --test rust-datalogic-rs --release
-cd js-json-logic-js
-npm install
-npm test
+cd test-data
+sh run.sh
+
 cd ../js-json-logic-engine
-npm install
-npm test
+sh run.sh
+
+cd ../js-json-logic-js
+sh run.sh
+
+cd ../rust-tests
+sh run.sh
+
 cd ../reports
-python3 report.py
+sh run.sh

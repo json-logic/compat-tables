@@ -153,3 +153,4 @@ dist
 .pnp.*
 
 .DS_Store
+reports/*.json
