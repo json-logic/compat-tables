@@ -1,4 +1,4 @@
-Feature: JsonLogic Compound Tests
+Feature: Compound Tests
 
   Testing compound tests operations in JsonLogic
 

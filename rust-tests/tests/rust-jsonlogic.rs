@@ -1,6 +1,5 @@
 use serde_json::Value;
 use cucumber::{given, then, when, World, writer};
-use jsonlogic_rs;
 use std::time::Instant;
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::fs;
@@ -40,7 +39,7 @@ async fn evaluate_rule(world: &mut JSONLogicWorld) {
     let data = world.data.as_ref().unwrap_or(&Value::Null);
 
     let start = Instant::now();
-    world.result = Some(jsonlogic_rs::apply(rule, data).unwrap());
+    world.result = Some(jsonlogic::apply(rule, data).unwrap());
     let duration = start.elapsed().as_nanos() as u64;
     EXECUTION_TIME.fetch_add(duration, Ordering::Relaxed);
 }
@@ -57,7 +56,7 @@ async fn check_result(world: &mut JSONLogicWorld, expected: String) {
 
 #[tokio::main]
 async fn main() {
-    let file = fs::File::create("report.json")
+    let file = fs::File::create("../reports/rust-jsonlogic.json")
         .expect("Failed to create report file");
 
     JSONLogicWorld::cucumber()

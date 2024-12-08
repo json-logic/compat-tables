@@ -48,7 +48,7 @@ def write_feature_file(category, scenarios, output_dir):
     """Write scenarios to feature file"""
     filename = os.path.join(output_dir, f"{category.lower().replace(' ', '_')}.feature")
     
-    content = f"""Feature: JsonLogic {category}
+    content = f"""Feature: {category}
 
   Testing {category.lower()} operations in JsonLogic
 {"".join(scenarios)}"""

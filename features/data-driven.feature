@@ -1,4 +1,4 @@
-Feature: JsonLogic Data-Driven
+Feature: Data-Driven
 
   Testing data-driven operations in JsonLogic
 

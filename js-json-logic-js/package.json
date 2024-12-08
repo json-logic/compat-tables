@@ -1,10 +1,10 @@
 {
-  "name": "js-json-logic-engine",
+  "name": "js-json-logic-js",
   "version": "1.0.0",
   "main": "jsonlogic.js",
   "scripts": {
     "test": "cucumber-js",
-    "test:report": "cucumber-js --format json:report.json"
+    "test:report": "cucumber-js --format json:../reports/json-logic-js.json"
   },
   "keywords": [],
   "author": "",

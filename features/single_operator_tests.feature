@@ -1,4 +1,4 @@
-Feature: JsonLogic Single operator tests
+Feature: Single operator tests
 
   Testing single operator tests operations in JsonLogic
 

@@ -1,4 +1,4 @@
-Feature: JsonLogic Non-rules get passed through
+Feature: Non-rules get passed through
 
   Testing non-rules get passed through operations in JsonLogic
 
