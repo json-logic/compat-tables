@@ -1,5 +1,5 @@
 const { Before, Given, When, Then } = require('@cucumber/cucumber');
-const jsonLogic = require('json-logic-js');
+const { LogicEngine } = require('json-logic-engine');
 const assert = require('assert');
 
 class JSONLogicWorld {
@@ -9,6 +9,8 @@ class JSONLogicWorld {
         this.result = null;
     }
 }
+
+const engine = new LogicEngine(undefined, { compatible: true });
 
 Before(function() {
     this.world = new JSONLogicWorld();
@@ -34,7 +36,7 @@ Given('the data {string}', function(dataStr) {
 
 When('I evaluate the rule', function() {
     const start = process.hrtime();
-    this.world.result = jsonLogic.apply(
+    this.world.result = engine.run(
         this.world.rule,
         this.world.data || null
     );
