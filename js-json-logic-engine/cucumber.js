@@ -2,6 +2,6 @@ module.exports = {
     default: {
         paths: ['../features/*.feature'],
         require: ['jsonlogic.js'],
-        format: ['progress-bar', 'json:report.json']
+        format: ['progress-bar', 'json:../reports/json-logic-engine.json']
     }
 }
