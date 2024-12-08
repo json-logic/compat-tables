@@ -38,6 +38,7 @@ def compare_libraries():
         'rust-jsonlogic.json',
         'rust-jsonlogic-rs.json',
         'json-logic-js.json',
+        'json-logic-engine.json'
     ]
     
     all_results = []
