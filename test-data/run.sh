@@ -1,1 +1,1 @@
-python3 test-data/convert.py test-data/test-cases.json features
+python3 convert.py test-cases.json ../features
