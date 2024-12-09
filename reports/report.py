@@ -92,7 +92,8 @@ def compare_libraries(libraries):
                 'library': lib['name'],
                 'language': lib['language'],
                 'version': lib.get('version', 'unknown'),
-                'release_date': lib.get('release_date', 'unknown')
+                'release_date': lib.get('release_date', 'unknown'),
+                'homepage': lib.get('homepage', '')
             })
         all_results.extend(results)
     
@@ -101,7 +102,11 @@ def compare_libraries(libraries):
     # Group by library and feature
     grouped = df.groupby(['library', 'feature']).agg({
         'scenario': 'count',
-        'status': lambda x: (x == 'passed').sum()
+        'status': lambda x: (x == 'passed').sum(),
+        'language': 'first',
+        'version': 'first',
+        'release_date': 'first',
+        'homepage': 'first'
     }).reset_index()
     
     # Format as passed/total with emoji
@@ -115,25 +120,19 @@ def compare_libraries(libraries):
     
     # Pivot to get features as columns
     summary = grouped.pivot(
-        index='library',
+        index=['library', 'language', 'version', 'release_date', 'homepage'],
         columns='feature',
         values='result'
+    ).reset_index()
+    
+    # Create markdown links for library names
+    summary['library'] = summary.apply(
+        lambda x: f"[{x['library']}]({x['homepage']})" if x['homepage'] else x['library'], 
+        axis=1
     )
     
-    # Add library info
-    lib_info = pd.DataFrame([{
-        'library': lib['name'],
-        'language': lib['language'],
-        'version': lib.get('version', 'unknown'),
-        'release_date': lib.get('release_date', 'unknown')
-    } for lib in libraries]).set_index('library')
-    
-    # Combine info with summary
-    summary = pd.concat([lib_info, summary], axis=1)
-    
-    # Reorder columns
-    cols = ['language', 'version', 'release_date'] + [col for col in summary.columns if col not in ['language', 'version', 'release_date']]
-    summary = summary[cols]
+    # Set library as index and drop homepage column
+    summary = summary.set_index('library').drop('homepage', axis=1)
     
     # Generate markdown
     markdown_content = "# Test Results Comparison\n\n"
@@ -148,31 +147,36 @@ if __name__ == "__main__":
             "name" : "datalogic-rs",
             "language" : "Rust",
             "report" : "rust-datalogic-rs.json",
-            "version_report": "../rust-tests/version.json"
+            "version_report": "../rust-tests/version.json",
+            "homepage": "https://github.com/Open-Payments/datalogic-rs"
         },
         {
             "name" : "jsonlogic",
             "language" : "Rust",
             "report" : "rust-jsonlogic.json",
-            "version_report": "../rust-tests/version.json"
+            "version_report": "../rust-tests/version.json",
+            "homepage": "https://github.com/marvindv/jsonlogic_rs"
         },
         {
             "name" : "jsonlogic-rs",
             "language" : "Rust",
             "report" : "rust-jsonlogic-rs.json",
-            "version_report": "../rust-tests/version.json"
+            "version_report": "../rust-tests/version.json",
+            "homepage": "https://github.com/Bestowinc/json-logic-rs"
         },
         {
             "name" : "json-logic-js",
             "language" : "JavaScript",
             "report" : "json-logic-js.json",
-            "version_report": "../js-json-logic-js/version.json"
+            "version_report": "../js-json-logic-js/version.json",
+            "homepage": "https://github.com/jwadhams/json-logic-js"
         },
         {
             "name" : "json-logic-engine",
             "language" : "JavaScript",
             "report" : "json-logic-engine.json",
-            "version_report": "../js-json-logic-engine/version.json"
+            "version_report": "../js-json-logic-engine/version.json",
+            "homepage": "https://github.com/TotalTechGeek/json-logic-engine"
         }
     ]
     updated_libraries = update_library_info(libraries)
