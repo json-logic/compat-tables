@@ -2,6 +2,19 @@ import json
 import pandas as pd
 import os
 
+from datetime import datetime
+
+def parse_date(date_str):
+    try:
+        # Try parsing ISO format with timezone
+        if 'T' in date_str:
+            dt = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
+            return dt.strftime('%Y-%m-%d')
+        # Try parsing simple date format
+        return datetime.strptime(date_str, '%Y-%m-%d').strftime('%Y-%m-%d')
+    except ValueError:
+        return date_str
+    
 def load_test_results(filename):
     try:
         with open(filename, 'r') as file:
@@ -32,6 +45,35 @@ def load_test_results(filename):
         print(f"Warning: File {filename} not found")
         return []
 
+def load_version_info(version_file):
+    try:
+        with open(version_file, 'r') as f:
+            versions = json.load(f)
+            if not isinstance(versions, list):
+                print(f"Warning: Unexpected format in {version_file}")
+                return {}
+            # Create dictionary with formatted dates
+            return {str(v.get('library')): {
+                'version': v.get('version'),
+                'date': parse_date(v.get('date', ''))
+            } for v in versions if isinstance(v, dict)}
+    except FileNotFoundError:
+        print(f"Warning: Version file {version_file} not found")
+        return {}
+    except json.JSONDecodeError:
+        print(f"Warning: Invalid JSON in {version_file}")
+        return {}
+
+def update_library_info(libraries):
+    for lib in libraries:
+        version_info = load_version_info(lib['version_report'])
+        if version_info and lib['name'] in version_info:
+            lib.update({
+                'version': version_info[lib['name']]['version'],
+                'release_date': version_info[lib['name']]['date']
+            })
+    return libraries
+
 def get_status_emoji(passed, total):
     pass_rate = passed / total
     if pass_rate == 1.0:
@@ -41,18 +83,17 @@ def get_status_emoji(passed, total):
     elif pass_rate == 0:
         return "❌"  # All failed
 
-def compare_libraries():
-    files = [
-        'rust-datalogic-rs.json',
-        'rust-jsonlogic.json',
-        'rust-jsonlogic-rs.json',
-        'json-logic-js.json',
-        'json-logic-engine.json'
-    ]
-    
+def compare_libraries(libraries):
     all_results = []
-    for file in files:
-        results = load_test_results(file)
+    for lib in libraries:
+        results = load_test_results(lib['report'])
+        for result in results:
+            result.update({
+                'library': lib['name'],
+                'language': lib['language'],
+                'version': lib.get('version', 'unknown'),
+                'release_date': lib.get('release_date', 'unknown')
+            })
         all_results.extend(results)
     
     df = pd.DataFrame(all_results)
@@ -79,32 +120,63 @@ def compare_libraries():
         values='result'
     )
     
-    # Add total column with emoji
-    totals = df.groupby('library').agg({
-        'scenario': 'count',
-        'status': lambda x: (x == 'passed').sum()
-    })
+    # Add library info
+    lib_info = pd.DataFrame([{
+        'library': lib['name'],
+        'language': lib['language'],
+        'version': lib.get('version', 'unknown'),
+        'release_date': lib.get('release_date', 'unknown')
+    } for lib in libraries]).set_index('library')
     
-    summary['Total'] = totals.apply(
-        lambda row: f"{row['status']}/{row['scenario']} {get_status_emoji(row['status'], row['scenario'])}", 
-        axis=1
-    )
+    # Combine info with summary
+    summary = pd.concat([lib_info, summary], axis=1)
     
-    # Console output
-    print("\nTest Results Summary:")
-    print("===================")
-    print(summary)
+    # Reorder columns
+    cols = ['language', 'version', 'release_date'] + [col for col in summary.columns if col not in ['language', 'version', 'release_date']]
+    summary = summary[cols]
     
-    # Generate markdown content
+    # Generate markdown
     markdown_content = "# Test Results Comparison\n\n"
     markdown_content += "Results format: passed/total scenarios\n\n"
     markdown_content += summary.to_markdown()
     
-    # Write to README.md
-    with open('../README.md', 'w') as f:
-        f.write(markdown_content)
-    
-    print("\nResults exported to README.md")
+    return summary, markdown_content
 
 if __name__ == "__main__":
-    compare_libraries()
+    libraries = [
+        {
+            "name" : "datalogic-rs",
+            "language" : "Rust",
+            "report" : "rust-datalogic-rs.json",
+            "version_report": "../rust-tests/version.json"
+        },
+        {
+            "name" : "jsonlogic",
+            "language" : "Rust",
+            "report" : "rust-jsonlogic.json",
+            "version_report": "../rust-tests/version.json"
+        },
+        {
+            "name" : "jsonlogic-rs",
+            "language" : "Rust",
+            "report" : "rust-jsonlogic-rs.json",
+            "version_report": "../rust-tests/version.json"
+        },
+        {
+            "name" : "json-logic-js",
+            "language" : "JavaScript",
+            "report" : "json-logic-js.json",
+            "version_report": "../js-json-logic-js/version.json"
+        },
+        {
+            "name" : "json-logic-engine",
+            "language" : "JavaScript",
+            "report" : "json-logic-engine.json",
+            "version_report": "../js-json-logic-engine/version.json"
+        }
+    ]
+    updated_libraries = update_library_info(libraries)
+    summary, markdown = compare_libraries(updated_libraries)
+    
+    with open('../README.md', 'w') as f:
+        f.write(markdown)

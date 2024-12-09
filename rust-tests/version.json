@@ -1,0 +1,17 @@
+[
+  {
+    "library": "jsonlogic",
+    "version": "0.5.1",
+    "date": "2020-03-05"
+  },
+  {
+    "library": "jsonlogic-rs",
+    "version": "0.4.0",
+    "date": "2024-07-01"
+  },
+  {
+    "library": "datalogic-rs",
+    "version": "1.0.7",
+    "date": "2024-12-09"
+  }
+]
