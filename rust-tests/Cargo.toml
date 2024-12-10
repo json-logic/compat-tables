@@ -12,7 +12,7 @@ tokio = { version = "1.42", features = ["full", "macros"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 async-trait = "0.1"
-datalogic-rs = "1.0.7"
+datalogic-rs = "1.0.8"
 jsonlogic-rs = "0.4.0"
 once_cell = "1.20.2"
 jsonlogic = "0.5"

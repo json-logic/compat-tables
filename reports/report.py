@@ -127,12 +127,17 @@ def compare_libraries(libraries):
     
     # Create markdown links for library names
     summary['library'] = summary.apply(
-        lambda x: f"[{x['library']}]({x['homepage']})" if x['homepage'] else x['library'], 
+        lambda x: f"**[{x['library']}]({x['homepage']}) {x['language']}**" if x['homepage'] else x['library'], 
+        axis=1
+    )
+
+    summary['version'] = summary.apply(
+        lambda x: f"{x['version']} ({x['release_date']})", 
         axis=1
     )
     
     # Set library as index and drop homepage column
-    summary = summary.set_index('library').drop('homepage', axis=1)
+    summary = summary.set_index('library').drop(['homepage', 'language', 'release_date'], axis=1)
     
     # Generate markdown
     markdown_content = "# Test Results Comparison\n\n"
