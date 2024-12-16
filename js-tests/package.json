@@ -1,0 +1,19 @@
+{
+  "name": "js-tests",
+  "version": "1.0.0",
+  "scripts": {
+    "test:json-logic-engine": "cucumber-js --config cucumber.json-logic-engine.js",
+    "test:json-logic-js": "cucumber-js --config cucumber.json-logic-js.js",
+    "test:all": "npm run test:json-logic-engine && npm run test:json-logic-js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.1.0",
+    "jest": "^29.7.0",
+    "json-logic-engine": "^4.0.1",
+    "json-logic-js": "^2.0.5"
+  }
+}

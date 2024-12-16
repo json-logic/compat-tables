@@ -1,10 +1,7 @@
 cd test-data
 sh run.sh
 
-cd ../js-json-logic-engine
-sh run.sh
-
-cd ../js-json-logic-js
+cd ../js-tests
 sh run.sh
 
 cd ../rust-tests

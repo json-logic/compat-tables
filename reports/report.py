@@ -173,14 +173,14 @@ if __name__ == "__main__":
             "name" : "json-logic-js",
             "language" : "JavaScript",
             "report" : "json-logic-js.json",
-            "version_report": "../js-json-logic-js/version.json",
+            "version_report": "../js-tests/version.json",
             "homepage": "https://github.com/jwadhams/json-logic-js"
         },
         {
             "name" : "json-logic-engine",
             "language" : "JavaScript",
             "report" : "json-logic-engine.json",
-            "version_report": "../js-json-logic-engine/version.json",
+            "version_report": "../js-tests/version.json",
             "homepage": "https://github.com/TotalTechGeek/json-logic-engine"
         }
     ]
