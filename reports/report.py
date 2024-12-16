@@ -114,10 +114,23 @@ def compare_libraries(libraries):
         passed = row['status']
         total = row['scenario']
         emoji = get_status_emoji(passed, total)
-        return f"{passed}/{total} {emoji}"
-    
-    grouped['result'] = grouped.apply(format_result, axis=1)
-    
+        return f"{passed}/{total} {emoji}", passed/total if total > 0 else 0
+
+    grouped['result'], grouped['pass_rate'] = zip(*grouped.apply(format_result, axis=1))
+
+    # Calculate total passed and scenarios per library
+    library_totals = grouped.groupby(['library', 'language', 'version', 'release_date', 'homepage']).agg({
+        'status': 'sum',
+        'scenario': 'sum'
+    }).reset_index()
+    library_totals['pass_rate'] = library_totals['status'] / library_totals['scenario']
+
+    # Sort libraries by pass rate and language
+    sorted_libraries = library_totals.sort_values(
+        ['pass_rate', 'language'], 
+        ascending=[False, True]
+    )['library'].tolist()
+
     # Pivot to get features as columns
     summary = grouped.pivot(
         index=['library', 'language', 'version', 'release_date', 'homepage'],
@@ -125,6 +138,17 @@ def compare_libraries(libraries):
         values='result'
     ).reset_index()
     
+    # Pivot with sorted index
+    summary = grouped.pivot(
+        index=['library', 'language', 'version', 'release_date', 'homepage'],
+        columns='feature',
+        values='result'
+    ).reset_index()
+
+    # Reorder based on sorted libraries
+    summary['sort_key'] = summary['library'].map({lib: i for i, lib in enumerate(sorted_libraries)})
+    summary = summary.sort_values('sort_key').drop('sort_key', axis=1)
+
     # Create markdown links for library names
     summary['library'] = summary.apply(
         lambda x: f"**[{x['library']}]({x['homepage']}) {x['language']}**" if x['homepage'] else x['library'], 
@@ -141,6 +165,10 @@ def compare_libraries(libraries):
     
     # Generate markdown
     markdown_content = "# Test Results Comparison\n\n"
+    markdown_content += "Status Key:\n\n"
+    markdown_content += "- ✅ All tests passing\n"
+    markdown_content += "- ⚠️ Some tests failing\n"
+    markdown_content += "- ❌ Not supported/Not implemented\n\n"
     markdown_content += "Results format: passed/total scenarios\n\n"
     markdown_content += summary.to_markdown()
     
@@ -182,6 +210,20 @@ if __name__ == "__main__":
             "report" : "json-logic-engine.json",
             "version_report": "../js-tests/version.json",
             "homepage": "https://github.com/TotalTechGeek/json-logic-engine"
+        },
+        {
+            "name" : "diegoholiveira/jsonlogic/v3",
+            "language" : "Go",
+            "report" : "diegoholiveira.json",
+            "version_report": "../go-tests/version.json",
+            "homepage": "https://github.com/diegoholiveira/jsonlogic"
+        },
+        {
+            "name" : "HuanTeng/go-jsonlogic",
+            "language" : "Go",
+            "report" : "huanteng.json",
+            "version_report": "../go-tests/version.json",
+            "homepage": "https://github.com/HuanTeng/go-jsonlogic"
         }
     ]
     updated_libraries = update_library_info(libraries)
