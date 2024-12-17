@@ -224,6 +224,27 @@ if __name__ == "__main__":
             "report" : "huanteng.json",
             "version_report": "../go-tests/version.json",
             "homepage": "https://github.com/HuanTeng/go-jsonlogic"
+        },
+        {
+            "name" : "python-jsonlogic",
+            "language" : "Python",
+            "report" : "python-python-jsonlogic.json",
+            "version_report": "../python-tests/version.json",
+            "homepage": "https://github.com/Viicos/jsonlogic"
+        },
+        {
+            "name" : "panzi-json-logic",
+            "language" : "Python",
+            "report" : "python-panzi-json-logic.json",
+            "version_report": "../python-tests/version.json",
+            "homepage": "https://github.com/panzi/panzi-json-logic"
+        },
+        {
+            "name" : "json-logic-qubit",
+            "language" : "Python",
+            "report" : "python-json-logic-qubit.json",
+            "version_report": "../python-tests/version.json",
+            "homepage": "https://github.com/nadirizr/json-logic-py"
         }
     ]
     updated_libraries = update_library_info(libraries)
