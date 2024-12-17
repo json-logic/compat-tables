@@ -1,0 +1,17 @@
+{
+    "name": "codetiger/php-tests",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Harishankar Narayanan",
+            "email": "nharishankar@gmail.com"
+        }
+    ],
+    "require": {
+        "jwadhams/json-logic-php": "^1.5",
+        "behat/behat": "^3.16"
+    },
+    "require-dev": {
+        "cawolf/behat-cucumber-json-formatter": "^1.5"
+    }
+}

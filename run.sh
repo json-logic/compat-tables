@@ -13,5 +13,8 @@ sh run.sh
 cd ../python-tests
 sh run.sh
 
+cd ../php-tests
+sh run.sh
+
 cd ../reports
 sh run.sh

@@ -245,6 +245,13 @@ if __name__ == "__main__":
             "report" : "python-json-logic-qubit.json",
             "version_report": "../python-tests/version.json",
             "homepage": "https://github.com/nadirizr/json-logic-py"
+        },
+        {
+            "name" : "json-logic-php",
+            "language" : "PHP",
+            "report" : "php-json-logic-php.json",
+            "version_report": "../php-tests/version.json",
+            "homepage": "https://github.com/jwadhams/json-logic-php"
         }
     ]
     updated_libraries = update_library_info(libraries)

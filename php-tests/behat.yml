@@ -1,0 +1,11 @@
+default:
+  suites:
+    default:
+      paths:
+        - features
+      contexts:
+        - JsonLogicContext
+  extensions:
+    Vanare\BehatCucumberJsonFormatter\Extension:
+      resultFilePerSuite: true
+      outputDir: ../reports
