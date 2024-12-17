@@ -10,6 +10,7 @@ if LIBRARY == 'python-jsonlogic':
     from jsonlogic.operators import operator_registry
     from jsonlogic import JSONLogicExpression
     from jsonlogic.evaluation import evaluate
+    from jsonlogic.resolving import DotReferenceParser
 elif LIBRARY == 'json-logic-qubit':
     from json_logic import jsonLogic
 elif LIBRARY == 'panzi-json-logic':
@@ -38,12 +39,13 @@ def evaluate_rule(context):
     start = time.perf_counter_ns()
     print(f"Rule: {type(context.rule)}:{json.dumps(context.rule)}, Data: {type(context.data)}:{context.data}")
     try:
+        data = context.data if hasattr(context, 'data') else {}
         if LIBRARY == 'python-jsonlogic':
             expr = JSONLogicExpression.from_json(context.rule)
             root_op = expr.as_operator_tree(operator_registry)
-            context.result = evaluate(root_op, context.data, data_schema=None)
+            context.result = evaluate(root_op, data, data_schema=None, settings={"reference_parser": DotReferenceParser()})
         else:
-            context.result = jsonLogic(context.rule, context.data)
+            context.result = jsonLogic(context.rule, data)
         context.execution_time = time.perf_counter_ns() - start
     except Exception as e:
         context.execution_time = time.perf_counter_ns() - start

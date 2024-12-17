@@ -19,4 +19,4 @@ Results format: passed/total scenarios
 | **[jsonlogic-rs](https://github.com/Bestowinc/json-logic-rs) Rust**                    | 0.4.0 (2024-07-01)  | 5/5 ✅            | 88/88 ✅       | 7/7 ✅                          | 176/178 ⚠️              |
 | **[jsonlogic](https://github.com/marvindv/jsonlogic_rs) Rust**                         | 0.5.1 (2020-03-05)  | 4/5 ⚠️           | 79/88 ⚠️      | 7/7 ✅                          | 150/178 ⚠️              |
 | **[HuanTeng/go-jsonlogic](https://github.com/HuanTeng/go-jsonlogic) Go**               | v0.2.0 (2021-09-08) | 4/5 ⚠️           | 18/88 ⚠️      | 7/7 ✅                          | 138/178 ⚠️              |
-| **[python-jsonlogic](https://github.com/Viicos/jsonlogic) Python**                     | 0.1.0 (2024-06-02)  | 0/5 ❌            | 4/88 ⚠️       | 0/7 ❌                          | 52/178 ⚠️               |
+| **[python-jsonlogic](https://github.com/Viicos/jsonlogic) Python**                     | 0.1.0 (2024-06-02)  | 0/5 ❌            | 10/88 ⚠️      | 0/7 ❌                          | 53/178 ⚠️               |
