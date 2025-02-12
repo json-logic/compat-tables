@@ -1,17 +1,11 @@
 {
-    "name": "codetiger/php-tests",
-    "type": "project",
-    "authors": [
-        {
-            "name": "Harishankar Narayanan",
-            "email": "nharishankar@gmail.com"
-        }
-    ],
+    "name": "jsonlogic/compat-tests",
     "require": {
-        "jwadhams/json-logic-php": "^1.5",
-        "behat/behat": "^3.16"
+        "jwadhams/json-logic-php": "^1.5"
     },
-    "require-dev": {
-        "cawolf/behat-cucumber-json-formatter": "^1.5"
+    "autoload": {
+        "psr-4": {
+            "JsonLogicCompat\\": "src/"
+        }
     }
 }

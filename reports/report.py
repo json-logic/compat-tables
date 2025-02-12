@@ -1,261 +1,211 @@
 import json
-import pandas as pd
 import os
-
+from typing import Dict, Any, Tuple, List
 from datetime import datetime
 
-def parse_date(date_str):
-    try:
-        # Try parsing ISO format with timezone
-        if 'T' in date_str:
-            dt = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
-            return dt.strftime('%Y-%m-%d')
-        # Try parsing simple date format
-        return datetime.strptime(date_str, '%Y-%m-%d').strftime('%Y-%m-%d')
-    except ValueError:
-        return date_str
-    
-def load_test_results(filename):
-    try:
-        with open(filename, 'r') as file:
-            data = json.load(file)
-            results = []
+def load_results(directory: str) -> Dict[str, Any]:
+    results = {}
+    for filename in os.listdir(directory):
+        if not filename.endswith('.json'):
+            continue
             
-            for feature in data:
-                feature_name = feature.get('name', 'Unknown Feature')
+        language = filename.split('.')[0]
+        with open(os.path.join(directory, filename), 'r') as f:
+            results[language] = json.load(f)
+    return results
+
+def create_summary_table(results: Dict[str, Any]) -> Tuple[None, List[List[str]]]:
+    # Collect all test suites and engines
+    all_suites = set()
+    engine_by_lang = {}
+    
+    # Create a mapping of engine to language
+    engine_lang_map = {}
+    for lang, lang_results in results.items():
+        all_suites.update(lang_results.get('test_suites', {}).keys())
+        for suite_results in lang_results.get('test_suites', {}).values():
+            if lang not in engine_by_lang:
+                engine_by_lang[lang] = set()
+            engines = suite_results.keys()
+            engine_by_lang[lang].update(engines)
+            # Map each engine to its language
+            for engine in engines:
+                engine_lang_map[engine] = lang
+
+    # Create headers and rows
+    rows = []
+    
+    # Create language header row
+    lang_row = ['Test Suite']
+    engine_row = ['']
+    
+    # Add language and engine names
+    for lang, engines in sorted(engine_by_lang.items()):
+        engines_sorted = sorted(engines)
+        lang_width = len(engines_sorted)
+        center_pos = lang_width // 2
+        
+        # Add language name centered over its engines
+        lang_headers = [''] * lang_width
+        lang_headers[center_pos] = lang.upper()
+        lang_row.extend(lang_headers)
+        
+        # Add engine names
+        engine_row.extend(engines_sorted)
+    
+    # Add header rows
+    rows.append(lang_row)
+    rows.append(engine_row)
+    rows.append(['-' * 80])  # Separator line
+    
+    # Add test suite rows
+    for suite in sorted(all_suites):
+        row = [f"{suite:<30}"]  # Left-align suite name with padding
+        for lang, engines in sorted(engine_by_lang.items()):
+            for engine in sorted(engines):
+                suite_results = results[lang].get('test_suites', {}).get(suite, {})
+                if engine in suite_results:
+                    stats = suite_results[engine]
+                    passed = stats.get('passed', 0)
+                    total = stats.get('total', 0)
+                    row.append(f"{passed:>3}/{total:<3}")
+                else:
+                    row.append(f"{'N/A':>7}")
+        rows.append(row)
+
+    # Add separator before totals
+    rows.append(['-' * 80])
+    
+    # Add totals row
+    total_row = ['TOTAL'.ljust(30)]
+    success_row = ['Success Rate'.ljust(30)]
+    
+    for lang, engines in sorted(engine_by_lang.items()):
+        for engine in sorted(engines):
+            if 'totals' in results[lang] and engine in results[lang]['totals']:
+                stats = results[lang]['totals'][engine]
+                passed = stats.get('passed', 0)
+                total = stats.get('total', 0)
+                success_rate = (passed / total * 100) if total > 0 else 0
                 
-                for element in feature.get('elements', []):
-                    scenario_name = element.get('name', 'Unknown Scenario')
-                    steps = element.get('steps', [])
-                    
-                    # Check if all steps passed
-                    all_steps_status = [step.get('result', {}).get('status', '').lower() for step in steps]
-                    scenario_status = 'passed' if all(status == 'passed' for status in all_steps_status) else 'failed'
-                    
-                    results.append({
-                        'feature': feature_name,
-                        'scenario': scenario_name,
-                        'status': scenario_status,
-                        'total_steps': len(steps),
-                        'library': os.path.splitext(os.path.basename(filename))[0]
-                    })
-            
-            return results
-    except FileNotFoundError:
-        print(f"Warning: File {filename} not found")
-        return []
-
-def load_version_info(version_file):
-    try:
-        with open(version_file, 'r') as f:
-            versions = json.load(f)
-            if not isinstance(versions, list):
-                print(f"Warning: Unexpected format in {version_file}")
-                return {}
-            # Create dictionary with formatted dates
-            return {str(v.get('library')): {
-                'version': v.get('version'),
-                'date': parse_date(v.get('date', ''))
-            } for v in versions if isinstance(v, dict)}
-    except FileNotFoundError:
-        print(f"Warning: Version file {version_file} not found")
-        return {}
-    except json.JSONDecodeError:
-        print(f"Warning: Invalid JSON in {version_file}")
-        return {}
-
-def update_library_info(libraries):
-    for lib in libraries:
-        version_info = load_version_info(lib['version_report'])
-        if version_info and lib['name'] in version_info:
-            lib.update({
-                'version': version_info[lib['name']]['version'],
-                'release_date': version_info[lib['name']]['date']
-            })
-    return libraries
-
-def get_status_emoji(passed, total):
-    pass_rate = passed / total
-    if pass_rate == 1.0:
-        return "✅"  # All passed
-    elif pass_rate > 0:
-        return "⚠️"  # Partial pass
-    elif pass_rate == 0:
-        return "❌"  # All failed
-
-def compare_libraries(libraries):
-    all_results = []
-    for lib in libraries:
-        results = load_test_results(lib['report'])
-        for result in results:
-            result.update({
-                'library': lib['name'],
-                'language': lib['language'],
-                'version': lib.get('version', 'unknown'),
-                'release_date': lib.get('release_date', 'unknown'),
-                'homepage': lib.get('homepage', '')
-            })
-        all_results.extend(results)
+                total_row.append(f"{passed:>3}/{total:<3}")
+                success_row.append(f"{success_rate:>6.2f}%")
+            else:
+                total_row.append(f"{'N/A':>7}")
+                success_row.append(f"{'N/A':>7}")
     
-    df = pd.DataFrame(all_results)
+    rows.append(total_row)
+    rows.append(success_row)
+
+    return None, rows
+
+def generate_html_report(rows: list, results: Dict[str, Any]) -> str:
+    current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
-    # Group by library and feature
-    grouped = df.groupby(['library', 'feature']).agg({
-        'scenario': 'count',
-        'status': lambda x: (x == 'passed').sum(),
-        'language': 'first',
-        'version': 'first',
-        'release_date': 'first',
-        'homepage': 'first'
-    }).reset_index()
+    # Create engine to language mapping
+    engine_lang_map = {}
+    for lang, lang_results in results.items():
+        for suite_results in lang_results.get('test_suites', {}).values():
+            for engine in suite_results.keys():
+                engine_lang_map[engine] = lang
+
+    ICONS = {
+        'go': '<i class="devicon-go-original-wordmark"></i>',
+        'python': '<i class="devicon-python-plain"></i>',
+        'rust': '<i class="devicon-rust-original"></i>',
+        'php': '<i class="devicon-php-plain"></i>',
+    }
     
-    # Format as passed/total with emoji
-    def format_result(row):
-        passed = row['status']
-        total = row['scenario']
-        emoji = get_status_emoji(passed, total)
-        return f"{passed}/{total} {emoji}", passed/total if total > 0 else 0
+    html = f"""
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>JSON Logic Implementation Comparison</title>
+        <style>
+            body {{ font-family: -apple-system, system-ui, sans-serif; margin: 20px; }}
+            table {{ border-collapse: collapse; width: 100%; }}
+            th, td {{ 
+                padding: 8px; 
+                text-align: center;  /* Center align all cells by default */
+            }}
+            th {{ background-color: #f2f2f2; }}
+            td {{ border-bottom: 1px solid #ddd; }}
+            .left {{ text-align: left; }}  /* For test suite names */
+            .total-row {{ font-weight: bold; border-top: 2px solid #000; }}
+            .success-row {{ font-weight: bold; }}
+            .header-row th {{ border-bottom: 2px solid #000; }}
+            .language-icon {{ 
+                width: 16px;
+                height: 16px;
+                vertical-align: middle;
+                margin-left: 4px;
+            }}
+        </style>
+        <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    </head>
+    <body>
+        <h1>JSON Logic Implementation Comparison</h1>
+        <p>Generated on: {current_time}</p>
+        <table>
+    """
 
-    grouped['result'], grouped['pass_rate'] = zip(*grouped.apply(format_result, axis=1))
-
-    # Calculate total passed and scenarios per library
-    library_totals = grouped.groupby(['library', 'language', 'version', 'release_date', 'homepage']).agg({
-        'status': 'sum',
-        'scenario': 'sum'
-    }).reset_index()
-    library_totals['pass_rate'] = library_totals['status'] / library_totals['scenario']
-
-    # Sort libraries by pass rate and language
-    sorted_libraries = library_totals.sort_values(
-        ['pass_rate', 'language'], 
-        ascending=[False, True]
-    )['library'].tolist()
-
-    # Pivot to get features as columns
-    summary = grouped.pivot(
-        index=['library', 'language', 'version', 'release_date', 'homepage'],
-        columns='feature',
-        values='result'
-    ).reset_index()
+    # Add headers without language names
+    lang_row, engine_row = rows[0], rows[1]
+    html += "<tr class='header-row'>"
+    html += f"<th rowspan='2'>{lang_row[0]}</th>"  # Test Suite column
     
-    # Pivot with sorted index
-    summary = grouped.pivot(
-        index=['library', 'language', 'version', 'release_date', 'homepage'],
-        columns='feature',
-        values='result'
-    ).reset_index()
+    # Add engine names with language icons
+    html += "<tr class='header-row'>"
+    for cell in engine_row[1:]:  # Skip first empty cell
+        if cell:
+            # Get language from the mapping
+            lang = engine_lang_map.get(cell, '').lower()
+            if lang in ICONS:
+                html += f"""<th>{cell} {ICONS[lang]}</th>"""
+            else:
+                html += f"<th>{cell}</th>"
+    html += "</tr>\n"
 
-    # Reorder based on sorted libraries
-    summary['sort_key'] = summary['library'].map({lib: i for i, lib in enumerate(sorted_libraries)})
-    summary = summary.sort_values('sort_key').drop('sort_key', axis=1)
+    # Add data rows
+    for row in rows[3:-3]:  # Skip headers and total rows
+        html += "<tr>"
+        for i, cell in enumerate(row):
+            if i == 0:
+                html += f"<td class='left'>{cell}</td>"  # Left align test suite names
+            else:
+                html += f"<td>{cell}</td>"  # Center align results
+        html += "</tr>\n"
 
-    # Create markdown links for library names
-    summary['library'] = summary.apply(
-        lambda x: f"**[{x['library']}]({x['homepage']}) {x['language']}**" if x['homepage'] else x['library'], 
-        axis=1
-    )
+    # Add total rows
+    for row in rows[-2:]:
+        cls = 'total-row' if 'TOTAL' in row[0] else 'success-row'
+        html += f"<tr class='{cls}'>"
+        for i, cell in enumerate(row):
+            if i == 0:
+                html += f"<td class='left'>{cell}</td>"  # Left align labels
+            else:
+                html += f"<td>{cell}</td>"  # Center align numbers
+        html += "</tr>\n"
 
-    summary['version'] = summary.apply(
-        lambda x: f"{x['version']} ({x['release_date']})", 
-        axis=1
-    )
+    html += """
+        </table>
+    </body>
+    </html>
+    """
+    return html
+
+def main():
+    results_dir = os.path.join(os.path.dirname(__file__), '..', 'results')
+    results = load_results(results_dir)
     
-    # Set library as index and drop homepage column
-    summary = summary.set_index('library').drop(['homepage', 'language', 'release_date'], axis=1)
+    _, rows = create_summary_table(results)
     
-    # Generate markdown
-    markdown_content = "# Test Results Comparison\n\n"
-    markdown_content += "Status Key:\n\n"
-    markdown_content += "- ✅ All tests passing\n"
-    markdown_content += "- ⚠️ Some tests failing\n"
-    markdown_content += "- ❌ Not supported/Not implemented\n\n"
-    markdown_content += "Results format: passed/total scenarios\n\n"
-    markdown_content += summary.to_markdown()
-    
-    return summary, markdown_content
+    # Generate and save HTML report
+    html = generate_html_report(rows, results)
+    report_path = os.path.join(os.path.dirname(__file__), '..', 'results', 'report.html')
+    with open(report_path, 'w') as f:
+        f.write(html)
+    print(f"Report generated: {report_path}")
 
 if __name__ == "__main__":
-    libraries = [
-        {
-            "name" : "datalogic-rs",
-            "language" : "Rust",
-            "report" : "rust-datalogic-rs.json",
-            "version_report": "../rust-tests/version.json",
-            "homepage": "https://github.com/Open-Payments/datalogic-rs"
-        },
-        {
-            "name" : "jsonlogic",
-            "language" : "Rust",
-            "report" : "rust-jsonlogic.json",
-            "version_report": "../rust-tests/version.json",
-            "homepage": "https://github.com/marvindv/jsonlogic_rs"
-        },
-        {
-            "name" : "jsonlogic-rs",
-            "language" : "Rust",
-            "report" : "rust-jsonlogic-rs.json",
-            "version_report": "../rust-tests/version.json",
-            "homepage": "https://github.com/Bestowinc/json-logic-rs"
-        },
-        {
-            "name" : "json-logic-js",
-            "language" : "JavaScript",
-            "report" : "json-logic-js.json",
-            "version_report": "../js-tests/version.json",
-            "homepage": "https://github.com/jwadhams/json-logic-js"
-        },
-        {
-            "name" : "json-logic-engine",
-            "language" : "JavaScript",
-            "report" : "json-logic-engine.json",
-            "version_report": "../js-tests/version.json",
-            "homepage": "https://github.com/TotalTechGeek/json-logic-engine"
-        },
-        {
-            "name" : "diegoholiveira/jsonlogic/v3",
-            "language" : "Go",
-            "report" : "diegoholiveira.json",
-            "version_report": "../go-tests/version.json",
-            "homepage": "https://github.com/diegoholiveira/jsonlogic"
-        },
-        {
-            "name" : "HuanTeng/go-jsonlogic",
-            "language" : "Go",
-            "report" : "huanteng.json",
-            "version_report": "../go-tests/version.json",
-            "homepage": "https://github.com/HuanTeng/go-jsonlogic"
-        },
-        {
-            "name" : "python-jsonlogic",
-            "language" : "Python",
-            "report" : "python-python-jsonlogic.json",
-            "version_report": "../python-tests/version.json",
-            "homepage": "https://github.com/Viicos/jsonlogic"
-        },
-        {
-            "name" : "panzi-json-logic",
-            "language" : "Python",
-            "report" : "python-panzi-json-logic.json",
-            "version_report": "../python-tests/version.json",
-            "homepage": "https://github.com/panzi/panzi-json-logic"
-        },
-        {
-            "name" : "json-logic-qubit",
-            "language" : "Python",
-            "report" : "python-json-logic-qubit.json",
-            "version_report": "../python-tests/version.json",
-            "homepage": "https://github.com/nadirizr/json-logic-py"
-        },
-        {
-            "name" : "json-logic-php",
-            "language" : "PHP",
-            "report" : "php-json-logic-php.json",
-            "version_report": "../php-tests/version.json",
-            "homepage": "https://github.com/jwadhams/json-logic-php"
-        }
-    ]
-    updated_libraries = update_library_info(libraries)
-    summary, markdown = compare_libraries(updated_libraries)
-    
-    with open('../README.md', 'w') as f:
-        f.write(markdown)
+    main()

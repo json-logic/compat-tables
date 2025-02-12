@@ -1,0 +1,24 @@
+{
+    "test_suites": {
+        "compatible.json": {
+            "jwadhams": {
+                "passed": 87,
+                "total": 278,
+                "success_rate": 31.294964028776977
+            }
+        }
+    },
+    "totals": {
+        "jwadhams": {
+            "passed": 87,
+            "total": 278,
+            "success_rate": 31.294964028776977
+        }
+    },
+    "timestamp": [
+        "2025-02-12T09:06:52+00:00"
+    ],
+    "php_version": [
+        "8.4.3"
+    ]
+}

@@ -1,5 +1,2 @@
-behave>=1.2.6
-requests>=2.31.0
 json-logic-qubit>=0.9.0
 panzi-json-logic>=1.0.1
-python-jsonlogic>=0.1.0

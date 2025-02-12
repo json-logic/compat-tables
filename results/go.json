@@ -1,0 +1,336 @@
+{
+  "test_suites": {
+    "additional.json": {
+      "DiegoHOliveira": {
+        "passed": 0,
+        "total": 1
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 1
+      }
+    },
+    "arithmetic/divide.extra.json": {
+      "DiegoHOliveira": {
+        "passed": 0,
+        "total": 3
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 3
+      }
+    },
+    "arithmetic/divide.json": {
+      "DiegoHOliveira": {
+        "passed": 14,
+        "total": 31
+      },
+      "HuanTeng": {
+        "passed": 5,
+        "total": 31
+      }
+    },
+    "arithmetic/minus.extra.json": {
+      "DiegoHOliveira": {
+        "passed": 0,
+        "total": 3
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 3
+      }
+    },
+    "arithmetic/minus.json": {
+      "DiegoHOliveira": {
+        "passed": 13,
+        "total": 22
+      },
+      "HuanTeng": {
+        "passed": 9,
+        "total": 22
+      }
+    },
+    "arithmetic/modulo.extra.json": {
+      "DiegoHOliveira": {
+        "passed": 0,
+        "total": 2
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 2
+      }
+    },
+    "arithmetic/modulo.json": {
+      "DiegoHOliveira": {
+        "passed": 11,
+        "total": 31
+      },
+      "HuanTeng": {
+        "passed": 11,
+        "total": 31
+      }
+    },
+    "arithmetic/multiply.extra.json": {
+      "DiegoHOliveira": {
+        "passed": 0,
+        "total": 3
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 3
+      }
+    },
+    "arithmetic/multiply.json": {
+      "DiegoHOliveira": {
+        "passed": 18,
+        "total": 28
+      },
+      "HuanTeng": {
+        "passed": 17,
+        "total": 28
+      }
+    },
+    "arithmetic/plus.extra.json": {
+      "DiegoHOliveira": {
+        "passed": 0,
+        "total": 3
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 3
+      }
+    },
+    "arithmetic/plus.json": {
+      "DiegoHOliveira": {
+        "passed": 18,
+        "total": 32
+      },
+      "HuanTeng": {
+        "passed": 17,
+        "total": 32
+      }
+    },
+    "chained.json": {
+      "DiegoHOliveira": {
+        "passed": 2,
+        "total": 7
+      },
+      "HuanTeng": {
+        "passed": 2,
+        "total": 7
+      }
+    },
+    "coalesce.json": {
+      "DiegoHOliveira": {
+        "passed": 2,
+        "total": 15
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 15
+      }
+    },
+    "comparison/greaterThan.json": {
+      "DiegoHOliveira": {
+        "passed": 26,
+        "total": 35
+      },
+      "HuanTeng": {
+        "passed": 22,
+        "total": 35
+      }
+    },
+    "comparison/greaterThanEquals.json": {
+      "DiegoHOliveira": {
+        "passed": 18,
+        "total": 28
+      },
+      "HuanTeng": {
+        "passed": 8,
+        "total": 28
+      }
+    },
+    "comparison/lessThan.json": {
+      "DiegoHOliveira": {
+        "passed": 36,
+        "total": 45
+      },
+      "HuanTeng": {
+        "passed": 30,
+        "total": 45
+      }
+    },
+    "comparison/lessThanEquals.json": {
+      "DiegoHOliveira": {
+        "passed": 13,
+        "total": 20
+      },
+      "HuanTeng": {
+        "passed": 9,
+        "total": 20
+      }
+    },
+    "comparison/softEquals.json": {
+      "DiegoHOliveira": {
+        "passed": 23,
+        "total": 35
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 35
+      }
+    },
+    "comparison/softNotEquals.json": {
+      "DiegoHOliveira": {
+        "passed": 23,
+        "total": 34
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 34
+      }
+    },
+    "comparison/strictEquals.json": {
+      "DiegoHOliveira": {
+        "passed": 26,
+        "total": 31
+      },
+      "HuanTeng": {
+        "passed": 27,
+        "total": 31
+      }
+    },
+    "comparison/strictNotEquals.json": {
+      "DiegoHOliveira": {
+        "passed": 27,
+        "total": 30
+      },
+      "HuanTeng": {
+        "passed": 27,
+        "total": 30
+      }
+    },
+    "compatible.json": {
+      "DiegoHOliveira": {
+        "passed": 278,
+        "total": 278
+      },
+      "HuanTeng": {
+        "passed": 167,
+        "total": 278
+      }
+    },
+    "control/and.json": {
+      "DiegoHOliveira": {
+        "passed": 22,
+        "total": 25
+      },
+      "HuanTeng": {
+        "passed": 22,
+        "total": 25
+      }
+    },
+    "control/if.json": {
+      "DiegoHOliveira": {
+        "passed": 40,
+        "total": 44
+      },
+      "HuanTeng": {
+        "passed": 42,
+        "total": 44
+      }
+    },
+    "control/or.json": {
+      "DiegoHOliveira": {
+        "passed": 0,
+        "total": 0
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 0
+      }
+    },
+    "exists.json": {
+      "DiegoHOliveira": {
+        "passed": 4,
+        "total": 8
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 8
+      }
+    },
+    "iterators.extra.json": {
+      "DiegoHOliveira": {
+        "passed": 0,
+        "total": 34
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 34
+      }
+    },
+    "throw.json": {
+      "DiegoHOliveira": {
+        "passed": 0,
+        "total": 3
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 3
+      }
+    },
+    "truthiness.json": {
+      "DiegoHOliveira": {
+        "passed": 11,
+        "total": 13
+      },
+      "HuanTeng": {
+        "passed": 9,
+        "total": 13
+      }
+    },
+    "try.json": {
+      "DiegoHOliveira": {
+        "passed": 0,
+        "total": 18
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 18
+      }
+    },
+    "val-compat.json": {
+      "DiegoHOliveira": {
+        "passed": 1,
+        "total": 60
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 60
+      }
+    },
+    "val.json": {
+      "DiegoHOliveira": {
+        "passed": 0,
+        "total": 13
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 13
+      }
+    }
+  },
+  "totals": {
+    "DiegoHOliveira": {
+      "passed": 626,
+      "total": 935
+    },
+    "HuanTeng": {
+      "passed": 424,
+      "total": 935
+    }
+  },
+  "timestamp": "2025-02-12T06:57:26Z",
+  "go_version": "go1.23.0"
+}
