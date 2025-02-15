@@ -1,9 +1,9 @@
-pip uninstall json-logic-qubit panzi-json-logic
-pip install json-logic-qubit
+pip uninstall json-logic-qubit panzi-json-logic --break-system-packages
+pip install json-logic-qubit --break-system-packages
 export LIBRARY="json-logic-qubit"
-python main.py
+python3 main.py
 
-pip uninstall json-logic-qubit
-pip install panzi-json-logic
+pip uninstall json-logic-qubit --break-system-packages
+pip install panzi-json-logic --break-system-packages
 export LIBRARY="panzi-json-logic"
-python main.py
+python3 main.py

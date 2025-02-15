@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonLogic.Tests", "dotnet-tests\JsonLogic.Tests.csproj", "{E3FC7852-EF5A-C019-9CF4-37467E5A630F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3FC7852-EF5A-C019-9CF4-37467E5A630F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3FC7852-EF5A-C019-9CF4-37467E5A630F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3FC7852-EF5A-C019-9CF4-37467E5A630F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3FC7852-EF5A-C019-9CF4-37467E5A630F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0CA457FF-E529-4AB4-AE96-674D8D809BDA}
+	EndGlobalSection
+EndGlobal

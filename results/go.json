@@ -270,6 +270,16 @@
         "total": 34
       }
     },
+    "scopes.json": {
+      "DiegoHOliveira": {
+        "passed": 0,
+        "total": 4
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 4
+      }
+    },
     "throw.json": {
       "DiegoHOliveira": {
         "passed": 0,
@@ -324,13 +334,13 @@
   "totals": {
     "DiegoHOliveira": {
       "passed": 626,
-      "total": 935
+      "total": 939
     },
     "HuanTeng": {
       "passed": 424,
-      "total": 935
+      "total": 939
     }
   },
-  "timestamp": "2025-02-12T06:57:26Z",
+  "timestamp": "2025-02-15T14:19:46Z",
   "go_version": "go1.23.0"
 }

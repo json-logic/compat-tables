@@ -1,7 +1,6 @@
-cd test-data
-sh run.sh
 
-cd ../js-tests
+
+cd js-tests
 sh run.sh
 
 cd ../rust-tests
@@ -14,6 +13,12 @@ cd ../python-tests
 sh run.sh
 
 cd ../php-tests
+sh run.sh
+
+cd ../java-tests
+sh run.sh
+
+cd ../dotnet-tests
 sh run.sh
 
 cd ../reports

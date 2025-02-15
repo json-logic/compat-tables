@@ -1,335 +1,345 @@
 {
   "test_suites": {
     "compatible.json": {
-      "Panzi": {
-        "passed": 277,
-        "total": 278
-      },
       "Qubit": {
         "passed": 277,
         "total": 278
+      },
+      "Panzi": {
+        "passed": 277,
+        "total": 278
       }
     },
-    "arithmetic/divide.extra.json": {
-      "Panzi": {
-        "passed": 0,
-        "total": 3
+    "arithmetic/plus.json": {
+      "Qubit": {
+        "passed": 19,
+        "total": 32
       },
+      "Panzi": {
+        "passed": 21,
+        "total": 32
+      }
+    },
+    "arithmetic/plus.extra.json": {
       "Qubit": {
         "passed": 0,
         "total": 3
-      }
-    },
-    "arithmetic/divide.json": {
-      "Panzi": {
-        "passed": 6,
-        "total": 31
       },
-      "Qubit": {
-        "passed": 5,
-        "total": 31
-      }
-    },
-    "arithmetic/minus.extra.json": {
       "Panzi": {
-        "passed": 0,
-        "total": 3
-      },
-      "Qubit": {
-        "passed": 0,
-        "total": 3
-      }
-    },
-    "arithmetic/minus.json": {
-      "Panzi": {
-        "passed": 12,
-        "total": 22
-      },
-      "Qubit": {
-        "passed": 11,
-        "total": 22
-      }
-    },
-    "arithmetic/modulo.extra.json": {
-      "Panzi": {
-        "passed": 0,
-        "total": 2
-      },
-      "Qubit": {
-        "passed": 0,
-        "total": 2
-      }
-    },
-    "arithmetic/modulo.json": {
-      "Panzi": {
-        "passed": 9,
-        "total": 31
-      },
-      "Qubit": {
-        "passed": 7,
-        "total": 31
-      }
-    },
-    "arithmetic/multiply.extra.json": {
-      "Panzi": {
-        "passed": 0,
-        "total": 3
-      },
-      "Qubit": {
         "passed": 0,
         "total": 3
       }
     },
     "arithmetic/multiply.json": {
+      "Qubit": {
+        "passed": 21,
+        "total": 28
+      },
       "Panzi": {
         "passed": 23,
         "total": 28
-      },
-      "Qubit": {
-        "passed": 21,
-        "total": 28
       }
     },
-    "arithmetic/plus.extra.json": {
-      "Panzi": {
+    "arithmetic/multiply.extra.json": {
+      "Qubit": {
         "passed": 0,
         "total": 3
       },
-      "Qubit": {
+      "Panzi": {
         "passed": 0,
         "total": 3
       }
     },
-    "arithmetic/plus.json": {
-      "Panzi": {
-        "passed": 21,
-        "total": 32
-      },
+    "arithmetic/minus.json": {
       "Qubit": {
-        "passed": 19,
-        "total": 32
+        "passed": 11,
+        "total": 22
+      },
+      "Panzi": {
+        "passed": 12,
+        "total": 22
+      }
+    },
+    "arithmetic/minus.extra.json": {
+      "Qubit": {
+        "passed": 0,
+        "total": 3
+      },
+      "Panzi": {
+        "passed": 0,
+        "total": 3
+      }
+    },
+    "arithmetic/divide.json": {
+      "Qubit": {
+        "passed": 5,
+        "total": 31
+      },
+      "Panzi": {
+        "passed": 6,
+        "total": 31
+      }
+    },
+    "arithmetic/divide.extra.json": {
+      "Qubit": {
+        "passed": 0,
+        "total": 3
+      },
+      "Panzi": {
+        "passed": 0,
+        "total": 3
+      }
+    },
+    "arithmetic/modulo.json": {
+      "Qubit": {
+        "passed": 7,
+        "total": 31
+      },
+      "Panzi": {
+        "passed": 9,
+        "total": 31
+      }
+    },
+    "arithmetic/modulo.extra.json": {
+      "Qubit": {
+        "passed": 0,
+        "total": 2
+      },
+      "Panzi": {
+        "passed": 0,
+        "total": 2
       }
     },
     "comparison/greaterThan.json": {
-      "Panzi": {
-        "passed": 25,
-        "total": 35
-      },
       "Qubit": {
         "passed": 22,
+        "total": 35
+      },
+      "Panzi": {
+        "passed": 25,
         "total": 35
       }
     },
     "comparison/greaterThanEquals.json": {
-      "Panzi": {
-        "passed": 18,
-        "total": 28
-      },
       "Qubit": {
         "passed": 14,
+        "total": 28
+      },
+      "Panzi": {
+        "passed": 18,
         "total": 28
       }
     },
     "comparison/lessThan.json": {
-      "Panzi": {
-        "passed": 35,
-        "total": 45
-      },
       "Qubit": {
         "passed": 33,
+        "total": 45
+      },
+      "Panzi": {
+        "passed": 35,
         "total": 45
       }
     },
     "comparison/lessThanEquals.json": {
-      "Panzi": {
-        "passed": 13,
-        "total": 20
-      },
       "Qubit": {
         "passed": 10,
+        "total": 20
+      },
+      "Panzi": {
+        "passed": 13,
         "total": 20
       }
     },
     "comparison/softEquals.json": {
-      "Panzi": {
-        "passed": 25,
-        "total": 35
-      },
       "Qubit": {
         "passed": 22,
+        "total": 35
+      },
+      "Panzi": {
+        "passed": 25,
         "total": 35
       }
     },
     "comparison/softNotEquals.json": {
-      "Panzi": {
-        "passed": 24,
-        "total": 34
-      },
       "Qubit": {
         "passed": 22,
+        "total": 34
+      },
+      "Panzi": {
+        "passed": 24,
         "total": 34
       }
     },
     "comparison/strictEquals.json": {
-      "Panzi": {
-        "passed": 24,
-        "total": 31
-      },
       "Qubit": {
         "passed": 25,
+        "total": 31
+      },
+      "Panzi": {
+        "passed": 24,
         "total": 31
       }
     },
     "comparison/strictNotEquals.json": {
-      "Panzi": {
-        "passed": 24,
-        "total": 30
-      },
       "Qubit": {
         "passed": 25,
+        "total": 30
+      },
+      "Panzi": {
+        "passed": 24,
         "total": 30
       }
     },
     "control/and.json": {
-      "Panzi": {
-        "passed": 23,
-        "total": 25
-      },
       "Qubit": {
         "passed": 24,
+        "total": 25
+      },
+      "Panzi": {
+        "passed": 23,
         "total": 25
       }
     },
     "control/if.json": {
-      "Panzi": {
-        "passed": 42,
-        "total": 44
-      },
       "Qubit": {
         "passed": 40,
+        "total": 44
+      },
+      "Panzi": {
+        "passed": 42,
         "total": 44
       }
     },
     "control/or.json": {
-      "Panzi": {
-        "passed": 0,
-        "total": 0
-      },
       "Qubit": {
         "passed": 0,
         "total": 0
-      }
-    },
-    "val.json": {
+      },
       "Panzi": {
         "passed": 0,
-        "total": 13
-      },
-      "Qubit": {
-        "passed": 0,
-        "total": 13
+        "total": 0
       }
     },
     "truthiness.json": {
-      "Panzi": {
-        "passed": 9,
-        "total": 13
-      },
       "Qubit": {
         "passed": 8,
         "total": 13
-      }
-    },
-    "coalesce.json": {
-      "Panzi": {
-        "passed": 0,
-        "total": 15
       },
-      "Qubit": {
-        "passed": 0,
-        "total": 15
+      "Panzi": {
+        "passed": 9,
+        "total": 13
       }
     },
     "additional.json": {
-      "Panzi": {
-        "passed": 0,
-        "total": 1
-      },
       "Qubit": {
         "passed": 0,
         "total": 1
+      },
+      "Panzi": {
+        "passed": 0,
+        "total": 1
+      }
+    },
+    "coalesce.json": {
+      "Qubit": {
+        "passed": 0,
+        "total": 15
+      },
+      "Panzi": {
+        "passed": 0,
+        "total": 15
       }
     },
     "chained.json": {
-      "Panzi": {
-        "passed": 2,
-        "total": 7
-      },
       "Qubit": {
         "passed": 2,
         "total": 7
-      }
-    },
-    "exists.json": {
-      "Panzi": {
-        "passed": 0,
-        "total": 8
       },
-      "Qubit": {
-        "passed": 0,
-        "total": 8
+      "Panzi": {
+        "passed": 2,
+        "total": 7
       }
     },
     "iterators.extra.json": {
-      "Panzi": {
+      "Qubit": {
         "passed": 0,
         "total": 34
       },
-      "Qubit": {
+      "Panzi": {
         "passed": 0,
         "total": 34
       }
     },
-    "throw.json": {
+    "exists.json": {
+      "Qubit": {
+        "passed": 0,
+        "total": 8
+      },
       "Panzi": {
+        "passed": 0,
+        "total": 8
+      }
+    },
+    "scopes.json": {
+      "Qubit": {
+        "passed": 0,
+        "total": 4
+      },
+      "Panzi": {
+        "passed": 0,
+        "total": 4
+      }
+    },
+    "throw.json": {
+      "Qubit": {
         "passed": 0,
         "total": 3
       },
-      "Qubit": {
+      "Panzi": {
         "passed": 0,
         "total": 3
       }
     },
     "try.json": {
-      "Panzi": {
+      "Qubit": {
         "passed": 0,
         "total": 18
       },
-      "Qubit": {
+      "Panzi": {
         "passed": 0,
         "total": 18
       }
     },
-    "val-compat.json": {
+    "val.json": {
+      "Qubit": {
+        "passed": 0,
+        "total": 13
+      },
       "Panzi": {
+        "passed": 0,
+        "total": 13
+      }
+    },
+    "val-compat.json": {
+      "Qubit": {
         "passed": 0,
         "total": 60
       },
-      "Qubit": {
+      "Panzi": {
         "passed": 0,
         "total": 60
       }
     }
   },
   "totals": {
-    "Panzi": {
-      "passed": 612,
-      "total": 935,
-      "success_rate": 0
-    },
     "Qubit": {
       "passed": 587,
-      "total": 935,
+      "total": 939,
+      "success_rate": 0
+    },
+    "Panzi": {
+      "passed": 612,
+      "total": 939,
       "success_rate": 0
     }
   }
