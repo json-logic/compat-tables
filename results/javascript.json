@@ -1,0 +1,413 @@
+{
+  "test_suites": {
+    "compatible.json": {
+      "json-logic-js": {
+        "passed": 278,
+        "total": 278,
+        "success_rate": 100
+      },
+      "json-logic-engine": {
+        "passed": 270,
+        "total": 278,
+        "success_rate": 97.12230215827337
+      }
+    },
+    "arithmetic/plus.json": {
+      "json-logic-js": {
+        "passed": 17,
+        "total": 32,
+        "success_rate": 53.125
+      },
+      "json-logic-engine": {
+        "passed": 24,
+        "total": 32,
+        "success_rate": 75
+      }
+    },
+    "arithmetic/plus.extra.json": {
+      "json-logic-js": {
+        "passed": 0,
+        "total": 3,
+        "success_rate": 0
+      },
+      "json-logic-engine": {
+        "passed": 3,
+        "total": 3,
+        "success_rate": 100
+      }
+    },
+    "arithmetic/multiply.json": {
+      "json-logic-js": {
+        "passed": 13,
+        "total": 28,
+        "success_rate": 46.42857142857143
+      },
+      "json-logic-engine": {
+        "passed": 25,
+        "total": 28,
+        "success_rate": 89.28571428571429
+      }
+    },
+    "arithmetic/multiply.extra.json": {
+      "json-logic-js": {
+        "passed": 0,
+        "total": 3,
+        "success_rate": 0
+      },
+      "json-logic-engine": {
+        "passed": 3,
+        "total": 3,
+        "success_rate": 100
+      }
+    },
+    "arithmetic/minus.json": {
+      "json-logic-js": {
+        "passed": 13,
+        "total": 22,
+        "success_rate": 59.09090909090909
+      },
+      "json-logic-engine": {
+        "passed": 19,
+        "total": 22,
+        "success_rate": 86.36363636363636
+      }
+    },
+    "arithmetic/minus.extra.json": {
+      "json-logic-js": {
+        "passed": 0,
+        "total": 3,
+        "success_rate": 0
+      },
+      "json-logic-engine": {
+        "passed": 2,
+        "total": 3,
+        "success_rate": 66.66666666666666
+      }
+    },
+    "arithmetic/divide.json": {
+      "json-logic-js": {
+        "passed": 6,
+        "total": 31,
+        "success_rate": 19.35483870967742
+      },
+      "json-logic-engine": {
+        "passed": 18,
+        "total": 31,
+        "success_rate": 58.06451612903226
+      }
+    },
+    "arithmetic/divide.extra.json": {
+      "json-logic-js": {
+        "passed": 0,
+        "total": 3,
+        "success_rate": 0
+      },
+      "json-logic-engine": {
+        "passed": 1,
+        "total": 3,
+        "success_rate": 33.33333333333333
+      }
+    },
+    "arithmetic/modulo.json": {
+      "json-logic-js": {
+        "passed": 12,
+        "total": 31,
+        "success_rate": 38.70967741935484
+      },
+      "json-logic-engine": {
+        "passed": 14,
+        "total": 31,
+        "success_rate": 45.16129032258064
+      }
+    },
+    "arithmetic/modulo.extra.json": {
+      "json-logic-js": {
+        "passed": 0,
+        "total": 2,
+        "success_rate": 0
+      },
+      "json-logic-engine": {
+        "passed": 0,
+        "total": 2,
+        "success_rate": 0
+      }
+    },
+    "comparison/greaterThan.json": {
+      "json-logic-js": {
+        "passed": 24,
+        "total": 35,
+        "success_rate": 68.57142857142857
+      },
+      "json-logic-engine": {
+        "passed": 25,
+        "total": 35,
+        "success_rate": 71.42857142857143
+      }
+    },
+    "comparison/greaterThanEquals.json": {
+      "json-logic-js": {
+        "passed": 17,
+        "total": 28,
+        "success_rate": 60.71428571428571
+      },
+      "json-logic-engine": {
+        "passed": 18,
+        "total": 28,
+        "success_rate": 64.28571428571429
+      }
+    },
+    "comparison/lessThan.json": {
+      "json-logic-js": {
+        "passed": 35,
+        "total": 45,
+        "success_rate": 77.77777777777779
+      },
+      "json-logic-engine": {
+        "passed": 35,
+        "total": 45,
+        "success_rate": 77.77777777777779
+      }
+    },
+    "comparison/lessThanEquals.json": {
+      "json-logic-js": {
+        "passed": 13,
+        "total": 20,
+        "success_rate": 65
+      },
+      "json-logic-engine": {
+        "passed": 13,
+        "total": 20,
+        "success_rate": 65
+      }
+    },
+    "comparison/softEquals.json": {
+      "json-logic-js": {
+        "passed": 24,
+        "total": 35,
+        "success_rate": 68.57142857142857
+      },
+      "json-logic-engine": {
+        "passed": 24,
+        "total": 35,
+        "success_rate": 68.57142857142857
+      }
+    },
+    "comparison/softNotEquals.json": {
+      "json-logic-js": {
+        "passed": 23,
+        "total": 34,
+        "success_rate": 67.64705882352942
+      },
+      "json-logic-engine": {
+        "passed": 23,
+        "total": 34,
+        "success_rate": 67.64705882352942
+      }
+    },
+    "comparison/strictEquals.json": {
+      "json-logic-js": {
+        "passed": 26,
+        "total": 31,
+        "success_rate": 83.87096774193549
+      },
+      "json-logic-engine": {
+        "passed": 27,
+        "total": 31,
+        "success_rate": 87.09677419354838
+      }
+    },
+    "comparison/strictNotEquals.json": {
+      "json-logic-js": {
+        "passed": 26,
+        "total": 30,
+        "success_rate": 86.66666666666667
+      },
+      "json-logic-engine": {
+        "passed": 26,
+        "total": 30,
+        "success_rate": 86.66666666666667
+      }
+    },
+    "control/and.json": {
+      "json-logic-js": {
+        "passed": 22,
+        "total": 25,
+        "success_rate": 88
+      },
+      "json-logic-engine": {
+        "passed": 18,
+        "total": 25,
+        "success_rate": 72
+      }
+    },
+    "control/if.json": {
+      "json-logic-js": {
+        "passed": 42,
+        "total": 44,
+        "success_rate": 95.45454545454545
+      },
+      "json-logic-engine": {
+        "passed": 35,
+        "total": 44,
+        "success_rate": 79.54545454545455
+      }
+    },
+    "control/or.json": {
+      "json-logic-js": {
+        "passed": 0,
+        "total": 0,
+        "success_rate": 0
+      },
+      "json-logic-engine": {
+        "passed": 0,
+        "total": 0,
+        "success_rate": 0
+      }
+    },
+    "truthiness.json": {
+      "json-logic-js": {
+        "passed": 9,
+        "total": 13,
+        "success_rate": 69.23076923076923
+      },
+      "json-logic-engine": {
+        "passed": 12,
+        "total": 13,
+        "success_rate": 92.3076923076923
+      }
+    },
+    "additional.json": {
+      "json-logic-js": {
+        "passed": 3,
+        "total": 4,
+        "success_rate": 75
+      },
+      "json-logic-engine": {
+        "passed": 4,
+        "total": 4,
+        "success_rate": 100
+      }
+    },
+    "coalesce.json": {
+      "json-logic-js": {
+        "passed": 0,
+        "total": 15,
+        "success_rate": 0
+      },
+      "json-logic-engine": {
+        "passed": 14,
+        "total": 15,
+        "success_rate": 93.33333333333333
+      }
+    },
+    "chained.json": {
+      "json-logic-js": {
+        "passed": 2,
+        "total": 7,
+        "success_rate": 28.57142857142857
+      },
+      "json-logic-engine": {
+        "passed": 7,
+        "total": 7,
+        "success_rate": 100
+      }
+    },
+    "iterators.extra.json": {
+      "json-logic-js": {
+        "passed": 0,
+        "total": 34,
+        "success_rate": 0
+      },
+      "json-logic-engine": {
+        "passed": 0,
+        "total": 34,
+        "success_rate": 0
+      }
+    },
+    "exists.json": {
+      "json-logic-js": {
+        "passed": 0,
+        "total": 8,
+        "success_rate": 0
+      },
+      "json-logic-engine": {
+        "passed": 8,
+        "total": 8,
+        "success_rate": 100
+      }
+    },
+    "scopes.json": {
+      "json-logic-js": {
+        "passed": 0,
+        "total": 4,
+        "success_rate": 0
+      },
+      "json-logic-engine": {
+        "passed": 3,
+        "total": 4,
+        "success_rate": 75
+      }
+    },
+    "throw.json": {
+      "json-logic-js": {
+        "passed": 0,
+        "total": 3,
+        "success_rate": 0
+      },
+      "json-logic-engine": {
+        "passed": 0,
+        "total": 3,
+        "success_rate": 0
+      }
+    },
+    "try.json": {
+      "json-logic-js": {
+        "passed": 0,
+        "total": 18,
+        "success_rate": 0
+      },
+      "json-logic-engine": {
+        "passed": 0,
+        "total": 18,
+        "success_rate": 0
+      }
+    },
+    "val.json": {
+      "json-logic-js": {
+        "passed": 0,
+        "total": 13,
+        "success_rate": 0
+      },
+      "json-logic-engine": {
+        "passed": 11,
+        "total": 13,
+        "success_rate": 84.61538461538461
+      }
+    },
+    "val-compat.json": {
+      "json-logic-js": {
+        "passed": 0,
+        "total": 60,
+        "success_rate": 0
+      },
+      "json-logic-engine": {
+        "passed": 58,
+        "total": 60,
+        "success_rate": 96.66666666666667
+      }
+    }
+  },
+  "totals": {
+    "json-logic-js": {
+      "passed": 605,
+      "total": 942,
+      "success_rate": 64.22505307855626
+    },
+    "json-logic-engine": {
+      "passed": 740,
+      "total": 942,
+      "success_rate": 78.55626326963908
+    }
+  },
+  "timestamp": "2025-02-15T06:18:19.436Z"
+}
