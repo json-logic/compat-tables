@@ -115,6 +115,7 @@ def generate_html_report(rows: list, results: Dict[str, Any]) -> str:
         'rust': '<i class="devicon-rust-original"></i>',
         'php': '<i class="devicon-php-plain"></i>',
         'javascript': '<i class="devicon-javascript-plain"></i>',
+        'java': '<i class="devicon-java-plain"></i>',
     }
     
     html = f"""

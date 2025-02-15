@@ -1,0 +1,243 @@
+{
+  "test_suites" : {
+    "chained.json" : {
+      "jamsesso" : {
+        "total" : 7,
+        "passed" : 3,
+        "success_rate" : 42.857142857142854
+      }
+    },
+    "arithmetic/divide.extra.json" : {
+      "jamsesso" : {
+        "total" : 3,
+        "passed" : 0,
+        "success_rate" : 0.0
+      }
+    },
+    "arithmetic/modulo.extra.json" : {
+      "jamsesso" : {
+        "total" : 2,
+        "passed" : 0,
+        "success_rate" : 0.0
+      }
+    },
+    "arithmetic/minus.extra.json" : {
+      "jamsesso" : {
+        "total" : 3,
+        "passed" : 0,
+        "success_rate" : 0.0
+      }
+    },
+    "comparison/lessThan.json" : {
+      "jamsesso" : {
+        "total" : 45,
+        "passed" : 29,
+        "success_rate" : 64.44444444444444
+      }
+    },
+    "scopes.json" : {
+      "jamsesso" : {
+        "total" : 4,
+        "passed" : 0,
+        "success_rate" : 0.0
+      }
+    },
+    "throw.json" : {
+      "jamsesso" : {
+        "total" : 3,
+        "passed" : 0,
+        "success_rate" : 0.0
+      }
+    },
+    "control/if.json" : {
+      "jamsesso" : {
+        "total" : 44,
+        "passed" : 40,
+        "success_rate" : 90.9090909090909
+      }
+    },
+    "arithmetic/minus.json" : {
+      "jamsesso" : {
+        "total" : 22,
+        "passed" : 7,
+        "success_rate" : 31.818181818181817
+      }
+    },
+    "arithmetic/plus.extra.json" : {
+      "jamsesso" : {
+        "total" : 3,
+        "passed" : 0,
+        "success_rate" : 0.0
+      }
+    },
+    "additional.json" : {
+      "jamsesso" : {
+        "total" : 1,
+        "passed" : 0,
+        "success_rate" : 0.0
+      }
+    },
+    "exists.json" : {
+      "jamsesso" : {
+        "total" : 8,
+        "passed" : 0,
+        "success_rate" : 0.0
+      }
+    },
+    "arithmetic/divide.json" : {
+      "jamsesso" : {
+        "total" : 31,
+        "passed" : 5,
+        "success_rate" : 16.129032258064516
+      }
+    },
+    "coalesce.json" : {
+      "jamsesso" : {
+        "total" : 15,
+        "passed" : 0,
+        "success_rate" : 0.0
+      }
+    },
+    "val.json" : {
+      "jamsesso" : {
+        "total" : 13,
+        "passed" : 0,
+        "success_rate" : 0.0
+      }
+    },
+    "comparison/lessThanEquals.json" : {
+      "jamsesso" : {
+        "total" : 20,
+        "passed" : 8,
+        "success_rate" : 40.0
+      }
+    },
+    "arithmetic/plus.json" : {
+      "jamsesso" : {
+        "total" : 32,
+        "passed" : 16,
+        "success_rate" : 50.0
+      }
+    },
+    "comparison/strictEquals.json" : {
+      "jamsesso" : {
+        "total" : 31,
+        "passed" : 25,
+        "success_rate" : 80.64516129032258
+      }
+    },
+    "comparison/softEquals.json" : {
+      "jamsesso" : {
+        "total" : 35,
+        "passed" : 22,
+        "success_rate" : 62.857142857142854
+      }
+    },
+    "arithmetic/modulo.json" : {
+      "jamsesso" : {
+        "total" : 31,
+        "passed" : 11,
+        "success_rate" : 35.483870967741936
+      }
+    },
+    "compatible.json" : {
+      "jamsesso" : {
+        "total" : 278,
+        "passed" : 262,
+        "success_rate" : 94.24460431654676
+      }
+    },
+    "control/or.json" : {
+      "jamsesso" : {
+        "total" : 0,
+        "passed" : 0,
+        "success_rate" : 0.0
+      }
+    },
+    "comparison/greaterThan.json" : {
+      "jamsesso" : {
+        "total" : 35,
+        "passed" : 19,
+        "success_rate" : 54.285714285714285
+      }
+    },
+    "val-compat.json" : {
+      "jamsesso" : {
+        "total" : 60,
+        "passed" : 0,
+        "success_rate" : 0.0
+      }
+    },
+    "iterators.extra.json" : {
+      "jamsesso" : {
+        "total" : 34,
+        "passed" : 0,
+        "success_rate" : 0.0
+      }
+    },
+    "comparison/greaterThanEquals.json" : {
+      "jamsesso" : {
+        "total" : 28,
+        "passed" : 5,
+        "success_rate" : 17.857142857142858
+      }
+    },
+    "control/and.json" : {
+      "jamsesso" : {
+        "total" : 25,
+        "passed" : 22,
+        "success_rate" : 88.0
+      }
+    },
+    "arithmetic/multiply.json" : {
+      "jamsesso" : {
+        "total" : 28,
+        "passed" : 16,
+        "success_rate" : 57.142857142857146
+      }
+    },
+    "try.json" : {
+      "jamsesso" : {
+        "total" : 18,
+        "passed" : 0,
+        "success_rate" : 0.0
+      }
+    },
+    "comparison/strictNotEquals.json" : {
+      "jamsesso" : {
+        "total" : 30,
+        "passed" : 25,
+        "success_rate" : 83.33333333333333
+      }
+    },
+    "truthiness.json" : {
+      "jamsesso" : {
+        "total" : 13,
+        "passed" : 8,
+        "success_rate" : 61.53846153846154
+      }
+    },
+    "comparison/softNotEquals.json" : {
+      "jamsesso" : {
+        "total" : 34,
+        "passed" : 22,
+        "success_rate" : 64.70588235294117
+      }
+    },
+    "arithmetic/multiply.extra.json" : {
+      "jamsesso" : {
+        "total" : 3,
+        "passed" : 0,
+        "success_rate" : 0.0
+      }
+    }
+  },
+  "totals" : {
+    "jamsesso" : {
+      "total" : 939,
+      "passed" : 545,
+      "success_rate" : 58.040468583599576
+    }
+  },
+  "timestamp" : "2025-02-15T07:27:06.243845Z"
+}
