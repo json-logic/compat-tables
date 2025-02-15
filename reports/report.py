@@ -99,6 +99,22 @@ def create_summary_table(results: Dict[str, Any]) -> Tuple[None, List[List[str]]
 
     return None, rows
 
+def get_success_class(cell: str) -> str:
+    if cell.strip() == 'N/A':
+        return 'na'
+    try:
+        if '/' in cell:
+            passed, total = map(int, cell.split('/'))
+            rate = (passed / total) * 100
+            if rate == 100:
+                return 'success-high'
+            elif rate >= 50:
+                return 'success-medium'
+            return 'success-low'
+    except:
+        pass
+    return ''
+
 def generate_html_report(rows: list, results: Dict[str, Any]) -> str:
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     
@@ -143,6 +159,10 @@ def generate_html_report(rows: list, results: Dict[str, Any]) -> str:
                 vertical-align: middle;
                 margin-left: 4px;
             }}
+            .success-high {{ background-color: #90EE90; }}   /* Light green */
+            .success-medium {{ background-color: #FFD700; }} /* Yellow */
+            .success-low {{ background-color: #FFA07A; }}    /* Light salmon */
+            .na {{ background-color: #f2f2f2; }}            /* Light gray */
         </style>
         <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     </head>
@@ -174,9 +194,10 @@ def generate_html_report(rows: list, results: Dict[str, Any]) -> str:
         html += "<tr>"
         for i, cell in enumerate(row):
             if i == 0:
-                html += f"<td class='left'>{cell}</td>"  # Left align test suite names
+                html += f"<td class='left'>{cell}</td>"
             else:
-                html += f"<td>{cell}</td>"  # Center align results
+                success_class = get_success_class(cell)
+                html += f"<td class='{success_class}'>{cell}</td>"
         html += "</tr>\n"
 
     # Add total rows
@@ -185,9 +206,10 @@ def generate_html_report(rows: list, results: Dict[str, Any]) -> str:
         html += f"<tr class='{cls}'>"
         for i, cell in enumerate(row):
             if i == 0:
-                html += f"<td class='left'>{cell}</td>"  # Left align labels
+                html += f"<td class='left'>{cell}</td>"
             else:
-                html += f"<td>{cell}</td>"  # Center align numbers
+                success_class = get_success_class(cell)
+                html += f"<td class='{success_class}'>{cell}</td>"
         html += "</tr>\n"
 
     html += """
