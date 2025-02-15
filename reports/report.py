@@ -205,7 +205,7 @@ def main():
     
     # Generate and save HTML report
     html = generate_html_report(rows, results)
-    report_path = os.path.join(os.path.dirname(__file__), '..', 'results', 'report.html')
+    report_path = os.path.join(os.path.dirname(__file__), '..', 'docs', 'index.html')
     with open(report_path, 'w') as f:
         f.write(html)
     print(f"Report generated: {report_path}")
