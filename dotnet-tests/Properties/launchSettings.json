@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "JsonLogic.Tests": {
+      "commandName": "Project",
+      "environmentVariables": {
+      }
+    }
+  }
+}
