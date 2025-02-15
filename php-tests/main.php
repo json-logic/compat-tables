@@ -57,9 +57,13 @@ function runEngineSuite(string $engine, array $suite): array {
         
         if ($runner->runTest($case)) {
             $passed++;
-        } else {
-            echo "Test failed for $engine\n";
         }
+    }
+
+    // Add summary for this suite
+    if ($total > 0) {
+        $successRate = ($passed / $total) * 100;
+        echo sprintf("\nResults: %d/%d passed (%.2f%%)\n", $passed, $total, $successRate);
     }
 
     return [$passed, $total];

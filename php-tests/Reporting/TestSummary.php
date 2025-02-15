@@ -4,8 +4,6 @@ namespace JsonLogicCompat\Reporting;
 class TestSummary {
     private array $resultsBySuite = [];
     private array $totals = [];
-    private array $timestamps = [];
-    private array $phpVersions = [];
 
     public function addResult(string $suiteName, string $engine, int $passed, int $total): void {
         // Initialize suite results if not exists
@@ -37,15 +35,9 @@ class TestSummary {
     }
 
     public function saveJson(string $filename): void {
-        // Add current run info
-        $this->timestamps[] = date('c');
-        $this->phpVersions[] = PHP_VERSION;
-
         $result = [
             'test_suites' => $this->resultsBySuite,
             'totals' => $this->totals,
-            'timestamp' => $this->timestamps,
-            'php_version' => $this->phpVersions
         ];
 
         $jsonData = json_encode($result, JSON_PRETTY_PRINT);

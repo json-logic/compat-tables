@@ -11,7 +11,7 @@ class TestCase {
         $case = new self();
         $case->logic = $data['rule'] ?? null;
         $case->data = $data['data'] ?? null;
-        $case->expectedValue = $data['value'] ?? null;
+        $case->expectedValue = $data['result'] ?? null;
         $case->expectedError = $data['error'] ?? null;
         return $case;
     }

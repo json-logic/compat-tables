@@ -2,23 +2,241 @@
     "test_suites": {
         "compatible.json": {
             "jwadhams": {
-                "passed": 87,
+                "passed": 278,
                 "total": 278,
-                "success_rate": 31.294964028776977
+                "success_rate": 100
+            }
+        },
+        "arithmetic\/plus.json": {
+            "jwadhams": {
+                "passed": 23,
+                "total": 32,
+                "success_rate": 71.875
+            }
+        },
+        "arithmetic\/plus.extra.json": {
+            "jwadhams": {
+                "passed": 0,
+                "total": 3,
+                "success_rate": 0
+            }
+        },
+        "arithmetic\/multiply.json": {
+            "jwadhams": {
+                "passed": 23,
+                "total": 28,
+                "success_rate": 82.14285714285714
+            }
+        },
+        "arithmetic\/multiply.extra.json": {
+            "jwadhams": {
+                "passed": 0,
+                "total": 3,
+                "success_rate": 0
+            }
+        },
+        "arithmetic\/minus.json": {
+            "jwadhams": {
+                "passed": 12,
+                "total": 22,
+                "success_rate": 54.54545454545454
+            }
+        },
+        "arithmetic\/minus.extra.json": {
+            "jwadhams": {
+                "passed": 0,
+                "total": 3,
+                "success_rate": 0
+            }
+        },
+        "arithmetic\/divide.json": {
+            "jwadhams": {
+                "passed": 6,
+                "total": 31,
+                "success_rate": 19.35483870967742
+            }
+        },
+        "arithmetic\/divide.extra.json": {
+            "jwadhams": {
+                "passed": 0,
+                "total": 3,
+                "success_rate": 0
+            }
+        },
+        "arithmetic\/modulo.json": {
+            "jwadhams": {
+                "passed": 11,
+                "total": 31,
+                "success_rate": 35.483870967741936
+            }
+        },
+        "arithmetic\/modulo.extra.json": {
+            "jwadhams": {
+                "passed": 0,
+                "total": 2,
+                "success_rate": 0
+            }
+        },
+        "comparison\/greaterThan.json": {
+            "jwadhams": {
+                "passed": 24,
+                "total": 35,
+                "success_rate": 68.57142857142857
+            }
+        },
+        "comparison\/greaterThanEquals.json": {
+            "jwadhams": {
+                "passed": 17,
+                "total": 28,
+                "success_rate": 60.71428571428571
+            }
+        },
+        "comparison\/lessThan.json": {
+            "jwadhams": {
+                "passed": 35,
+                "total": 45,
+                "success_rate": 77.77777777777779
+            }
+        },
+        "comparison\/lessThanEquals.json": {
+            "jwadhams": {
+                "passed": 13,
+                "total": 20,
+                "success_rate": 65
+            }
+        },
+        "comparison\/softEquals.json": {
+            "jwadhams": {
+                "passed": 25,
+                "total": 35,
+                "success_rate": 71.42857142857143
+            }
+        },
+        "comparison\/softNotEquals.json": {
+            "jwadhams": {
+                "passed": 24,
+                "total": 34,
+                "success_rate": 70.58823529411765
+            }
+        },
+        "comparison\/strictEquals.json": {
+            "jwadhams": {
+                "passed": 26,
+                "total": 31,
+                "success_rate": 83.87096774193549
+            }
+        },
+        "comparison\/strictNotEquals.json": {
+            "jwadhams": {
+                "passed": 26,
+                "total": 30,
+                "success_rate": 86.66666666666667
+            }
+        },
+        "control\/and.json": {
+            "jwadhams": {
+                "passed": 24,
+                "total": 25,
+                "success_rate": 96
+            }
+        },
+        "control\/if.json": {
+            "jwadhams": {
+                "passed": 40,
+                "total": 44,
+                "success_rate": 90.9090909090909
+            }
+        },
+        "control\/or.json": {
+            "jwadhams": {
+                "passed": 0,
+                "total": 0,
+                "success_rate": 0
+            }
+        },
+        "truthiness.json": {
+            "jwadhams": {
+                "passed": 8,
+                "total": 13,
+                "success_rate": 61.53846153846154
+            }
+        },
+        "additional.json": {
+            "jwadhams": {
+                "passed": 3,
+                "total": 4,
+                "success_rate": 75
+            }
+        },
+        "coalesce.json": {
+            "jwadhams": {
+                "passed": 0,
+                "total": 15,
+                "success_rate": 0
+            }
+        },
+        "chained.json": {
+            "jwadhams": {
+                "passed": 2,
+                "total": 7,
+                "success_rate": 28.57142857142857
+            }
+        },
+        "iterators.extra.json": {
+            "jwadhams": {
+                "passed": 0,
+                "total": 34,
+                "success_rate": 0
+            }
+        },
+        "exists.json": {
+            "jwadhams": {
+                "passed": 0,
+                "total": 8,
+                "success_rate": 0
+            }
+        },
+        "scopes.json": {
+            "jwadhams": {
+                "passed": 0,
+                "total": 4,
+                "success_rate": 0
+            }
+        },
+        "throw.json": {
+            "jwadhams": {
+                "passed": 0,
+                "total": 3,
+                "success_rate": 0
+            }
+        },
+        "try.json": {
+            "jwadhams": {
+                "passed": 0,
+                "total": 18,
+                "success_rate": 0
+            }
+        },
+        "val.json": {
+            "jwadhams": {
+                "passed": 0,
+                "total": 13,
+                "success_rate": 0
+            }
+        },
+        "val-compat.json": {
+            "jwadhams": {
+                "passed": 0,
+                "total": 60,
+                "success_rate": 0
             }
         }
     },
     "totals": {
         "jwadhams": {
-            "passed": 87,
-            "total": 278,
-            "success_rate": 31.294964028776977
+            "passed": 620,
+            "total": 942,
+            "success_rate": 65.81740976645435
         }
-    },
-    "timestamp": [
-        "2025-02-12T09:06:52+00:00"
-    ],
-    "php_version": [
-        "8.4.3"
-    ]
+    }
 }
