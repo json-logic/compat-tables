@@ -163,9 +163,9 @@
         },
         "additional.json": {
             "jwadhams": {
-                "passed": 3,
+                "passed": 0,
                 "total": 4,
-                "success_rate": 75
+                "success_rate": 0
             }
         },
         "coalesce.json": {
@@ -234,9 +234,9 @@
     },
     "totals": {
         "jwadhams": {
-            "passed": 620,
+            "passed": 617,
             "total": 942,
-            "success_rate": 65.81740976645435
+            "success_rate": 65.49893842887474
         }
     }
 }

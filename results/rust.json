@@ -2,16 +2,16 @@
   "test_suites": {
     "additional.json": {
       "DataLogic": {
-        "passed": 1,
-        "total": 1
+        "passed": 4,
+        "total": 4
       },
       "JsonLogic": {
         "passed": 0,
-        "total": 1
+        "total": 4
       },
       "JsonLogicRs": {
         "passed": 0,
-        "total": 1
+        "total": 4
       }
     },
     "arithmetic/divide.extra.json": {
@@ -465,16 +465,16 @@
   },
   "totals": {
     "DataLogic": {
-      "passed": 935,
-      "total": 939
+      "passed": 938,
+      "total": 942
     },
     "JsonLogic": {
       "passed": 623,
-      "total": 939
+      "total": 942
     },
     "JsonLogicRs": {
       "passed": 606,
-      "total": 939
+      "total": 942
     }
   }
 }

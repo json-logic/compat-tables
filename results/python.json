@@ -233,11 +233,11 @@
     "additional.json": {
       "Qubit": {
         "passed": 0,
-        "total": 1
+        "total": 4
       },
       "Panzi": {
         "passed": 0,
-        "total": 1
+        "total": 4
       }
     },
     "coalesce.json": {
@@ -334,12 +334,12 @@
   "totals": {
     "Qubit": {
       "passed": 587,
-      "total": 939,
+      "total": 942,
       "success_rate": 0
     },
     "Panzi": {
       "passed": 612,
-      "total": 939,
+      "total": 942,
       "success_rate": 0
     }
   }

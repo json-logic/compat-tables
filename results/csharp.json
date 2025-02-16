@@ -163,7 +163,7 @@
     },
     "additional.json": {
       "jsonlogicnet": {
-        "total": 1,
+        "total": 4,
         "passed": 0,
         "success_rate": 0.0
       }
@@ -234,10 +234,10 @@
   },
   "totals": {
     "jsonlogicnet": {
-      "total": 939,
+      "total": 942,
       "passed": 592,
-      "success_rate": 63.0457933972311
+      "success_rate": 62.84501061571125
     }
   },
-  "timestamp": "2025-02-16T04:20:45.879302Z"
+  "timestamp": "2025-02-16T04:30:14.696609Z"
 }

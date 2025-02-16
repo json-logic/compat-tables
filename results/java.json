@@ -72,7 +72,7 @@
     },
     "additional.json" : {
       "jamsesso" : {
-        "total" : 1,
+        "total" : 4,
         "passed" : 0,
         "success_rate" : 0.0
       }
@@ -234,10 +234,10 @@
   },
   "totals" : {
     "jamsesso" : {
-      "total" : 939,
+      "total" : 942,
       "passed" : 545,
-      "success_rate" : 58.040468583599576
+      "success_rate" : 57.85562632696391
     }
   },
-  "timestamp" : "2025-02-16T04:20:44.939676Z"
+  "timestamp" : "2025-02-16T04:30:12.471864Z"
 }
