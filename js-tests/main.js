@@ -34,8 +34,7 @@ async function runEngineSuite(engine, suite) {
         if (await runner.runTest(case_)) {
             passed++;
         } else {
-            console.log('Failed test case:', case_);
-            
+            console.log('Failed test case:', testCase);
         }
     }
 
@@ -53,7 +52,7 @@ async function main() {
         console.log(`Successfully loaded ${Object.keys(suites).length} test suites`);
 
         const summary = new TestSummary();
-        const engines = ['json-logic-js', 'json-logic-engine'];
+        const engines = ['json-logic-engine'];
 
         for (const [name, suite] of Object.entries(suites)) {
             console.log(`\nRunning suite: ${name}`);

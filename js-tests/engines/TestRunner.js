@@ -23,7 +23,20 @@ export class TestRunner {
             if (!testCase.expectedError) {
                 return false;
             }
-            return this.compareErrors(error.message, testCase.expectedError);
+            if (Number.isNaN(error)) 
+                error = { type: 'NaN' }
+            else if (error.message) 
+                error = { type: error.message }
+
+            if (JSON.stringify(error) === JSON.stringify(testCase.expectedError) ) {
+                return true;
+            }
+
+            const success = this.compareErrors(error.type, testCase.expectedError);
+            if (!success) {
+                console.log('Result:', error);
+            }
+            return success;
         }
     }
 
@@ -63,19 +76,43 @@ export class TestRunner {
             return got.every((value, index) => this.compareValues(value, expected[index]));
         }
 
+        // Handle object comparisons
+        if (typeof got === 'object' && typeof expected === 'object') {
+            if (got === null || expected === null) {
+                return got === expected;
+            }
+            const gotKeys = Object.keys(got);
+            const expectedKeys = Object.keys(expected);
+            if (gotKeys.length !== expectedKeys.length) {
+                return false;
+            }
+            return gotKeys.every(key => 
+                expectedKeys.includes(key) && 
+                this.compareValues(got[key], expected[key])
+            );
+        }
+
         // Default strict comparison
         return got === expected;
     }
 
     compareErrors(got, expected) {
-        if (typeof expected !== 'object') {
+        console.log('compareErrors: got:', got);
+        console.log('expected:', expected.type);
+
+        if (!got || typeof expected !== 'object') {
             return false;
         }
+
+        if (expected.type === got || expected === got) {
+            return true;
+        }
         
-        const expectedType = expected.type?.toLowerCase() ?? '';
-        const expectedMessage = expected.message?.toLowerCase() ?? '';
+        const gotLower = got.toLowerCase();
+        const expectedType = expected?.type?.toLowerCase() ?? '';
+        const expectedMessage = expected?.message?.toLowerCase() ?? '';
         
-        return (!expectedType || got.toLowerCase().includes(expectedType)) &&
-               (!expectedMessage || got.toLowerCase().includes(expectedMessage));
+        return (!expectedType || gotLower.includes(expectedType)) &&
+               (!expectedMessage || gotLower.includes(expectedMessage));
     }
 }
