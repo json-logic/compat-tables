@@ -252,18 +252,6 @@
         "success_rate": 100
       }
     },
-    "control/or.json": {
-      "json-logic-js": {
-        "passed": 0,
-        "total": 0,
-        "success_rate": 0
-      },
-      "json-logic-engine": {
-        "passed": 0,
-        "total": 0,
-        "success_rate": 0
-      }
-    },
     "truthiness.json": {
       "json-logic-js": {
         "passed": 9,
@@ -336,18 +324,6 @@
         "success_rate": 100
       }
     },
-    "scopes.json": {
-      "json-logic-js": {
-        "passed": 0,
-        "total": 4,
-        "success_rate": 0
-      },
-      "json-logic-engine": {
-        "passed": 4,
-        "total": 4,
-        "success_rate": 100
-      }
-    },
     "throw.json": {
       "json-logic-js": {
         "passed": 0,
@@ -400,14 +376,14 @@
   "totals": {
     "json-logic-js": {
       "passed": 603,
-      "total": 942,
-      "success_rate": 64.01273885350318
+      "total": 938,
+      "success_rate": 64.28571428571429
     },
     "json-logic-engine": {
-      "passed": 942,
-      "total": 942,
+      "passed": 938,
+      "total": 938,
       "success_rate": 100
     }
   },
-  "timestamp": "2025-02-16T04:36:22.244Z"
+  "timestamp": "2025-02-20T03:57:28.315Z"
 }

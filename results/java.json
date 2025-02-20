@@ -35,13 +35,6 @@
         "success_rate" : 64.44444444444444
       }
     },
-    "scopes.json" : {
-      "jamsesso" : {
-        "total" : 4,
-        "passed" : 0,
-        "success_rate" : 0.0
-      }
-    },
     "throw.json" : {
       "jamsesso" : {
         "total" : 3,
@@ -147,13 +140,6 @@
         "success_rate" : 94.24460431654676
       }
     },
-    "control/or.json" : {
-      "jamsesso" : {
-        "total" : 0,
-        "passed" : 0,
-        "success_rate" : 0.0
-      }
-    },
     "comparison/greaterThan.json" : {
       "jamsesso" : {
         "total" : 35,
@@ -234,10 +220,10 @@
   },
   "totals" : {
     "jamsesso" : {
-      "total" : 942,
+      "total" : 938,
       "passed" : 545,
-      "success_rate" : 57.85562632696391
+      "success_rate" : 58.10234541577825
     }
   },
-  "timestamp" : "2025-02-16T04:36:29.016733Z"
+  "timestamp" : "2025-02-20T03:57:33.324224Z"
 }

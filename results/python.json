@@ -210,16 +210,6 @@
         "total": 44
       }
     },
-    "control/or.json": {
-      "Qubit": {
-        "passed": 0,
-        "total": 0
-      },
-      "Panzi": {
-        "passed": 0,
-        "total": 0
-      }
-    },
     "truthiness.json": {
       "Qubit": {
         "passed": 8,
@@ -280,16 +270,6 @@
         "total": 8
       }
     },
-    "scopes.json": {
-      "Qubit": {
-        "passed": 0,
-        "total": 4
-      },
-      "Panzi": {
-        "passed": 0,
-        "total": 4
-      }
-    },
     "throw.json": {
       "Qubit": {
         "passed": 0,
@@ -334,12 +314,12 @@
   "totals": {
     "Qubit": {
       "passed": 587,
-      "total": 942,
+      "total": 938,
       "success_rate": 0
     },
     "Panzi": {
       "passed": 612,
-      "total": 942,
+      "total": 938,
       "success_rate": 0
     }
   }

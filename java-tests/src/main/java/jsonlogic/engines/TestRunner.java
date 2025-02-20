@@ -1,11 +1,9 @@
 package jsonlogic.engines;
 
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.jamsesso.jsonlogic.JsonLogic;
 import jsonlogic.test.TestCase;
 import java.util.Map;
-import java.util.HashMap;
 
 public class TestRunner {
     private final String engine;

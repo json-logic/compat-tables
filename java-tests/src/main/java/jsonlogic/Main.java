@@ -6,8 +6,6 @@ import jsonlogic.engines.TestRunner;
 import jsonlogic.test.TestCase;
 import jsonlogic.reporting.TestSummary;
 
-import java.io.File;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
@@ -53,7 +51,7 @@ public class Main {
     private static Map<String, List<TestCase>> loadTestSuites() throws Exception {
         ObjectMapper mapper = new ObjectMapper();
         Path indexPath = Paths.get("../suites/index.json");
-        List<String> files = mapper.readValue(indexPath.toFile(), List.class);
+        List<String> files = mapper.readValue(indexPath.toFile(), new com.fasterxml.jackson.core.type.TypeReference<List<String>>() {});
         
         Map<String, List<TestCase>> suites = new HashMap<>();
         Path suitesDir = Paths.get("../suites");

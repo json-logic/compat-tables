@@ -336,20 +336,6 @@
         "total": 44
       }
     },
-    "control/or.json": {
-      "DataLogic": {
-        "passed": 0,
-        "total": 0
-      },
-      "JsonLogic": {
-        "passed": 0,
-        "total": 0
-      },
-      "JsonLogicRs": {
-        "passed": 0,
-        "total": 0
-      }
-    },
     "exists.json": {
       "DataLogic": {
         "passed": 8,
@@ -376,20 +362,6 @@
       "JsonLogicRs": {
         "passed": 0,
         "total": 34
-      }
-    },
-    "scopes.json": {
-      "DataLogic": {
-        "passed": 0,
-        "total": 4
-      },
-      "JsonLogic": {
-        "passed": 0,
-        "total": 4
-      },
-      "JsonLogicRs": {
-        "passed": 0,
-        "total": 4
       }
     },
     "throw.json": {
@@ -466,15 +438,15 @@
   "totals": {
     "DataLogic": {
       "passed": 938,
-      "total": 942
+      "total": 938
     },
     "JsonLogic": {
       "passed": 623,
-      "total": 942
+      "total": 938
     },
     "JsonLogicRs": {
       "passed": 606,
-      "total": 942
+      "total": 938
     }
   }
 }

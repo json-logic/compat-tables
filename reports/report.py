@@ -60,15 +60,25 @@ def create_summary_table(results: Dict[str, Any]) -> Tuple[None, List[List[str]]
     
     # Add test suite rows
     for suite in sorted(all_suites):
-        row = [f"{suite:<30}"]  # Left-align suite name with padding
+        # Get total test cases from first non-empty result
+        total_cases = 0
+        for lang, lang_results in results.items():
+            suite_results = lang_results.get('test_suites', {}).get(suite, {})
+            for stats in suite_results.values():
+                total_cases = stats.get('total', 0)
+                if total_cases > 0:
+                    break
+            if total_cases > 0:
+                break
+        
+        row = [f"{suite} ({total_cases} cases)".ljust(40)]  # Left-align suite name with case count
         for lang, engines in sorted(engine_by_lang.items()):
             for engine in sorted(engines):
                 suite_results = results[lang].get('test_suites', {}).get(suite, {})
                 if engine in suite_results:
                     stats = suite_results[engine]
                     passed = stats.get('passed', 0)
-                    total = stats.get('total', 0)
-                    row.append(f"{passed:>3}/{total:<3}")
+                    row.append(f"{passed:>3}")
                 else:
                     row.append(f"{'N/A':>7}")
         rows.append(row)
@@ -88,32 +98,54 @@ def create_summary_table(results: Dict[str, Any]) -> Tuple[None, List[List[str]]
                 total = stats.get('total', 0)
                 success_rate = (passed / total * 100) if total > 0 else 0
                 
-                total_row.append(f"{passed:>3}/{total:<3}")
+                total_row.append(f"{passed:>3}")  # Only show passing tests
                 success_row.append(f"{success_rate:>6.2f}%")
             else:
                 total_row.append(f"{'N/A':>7}")
                 success_row.append(f"{'N/A':>7}")
-    
+        
     rows.append(total_row)
     rows.append(success_row)
 
     return None, rows
 
-def get_success_class(cell: str) -> str:
+def get_success_class(cell: str, current_row: list = None) -> str:
     if cell.strip() == 'N/A':
         return 'na'
     try:
-        if '/' in cell:
-            passed, total = map(int, cell.split('/'))
-            rate = (passed / total) * 100
+        # Skip test suite name cells
+        if '(' in cell and 'cases)' in cell:
+            return ''
+        
+        # Handle percentage values in Success Rate row
+        if '%' in cell:
+            rate = float(cell.rstrip('%'))
             if rate == 100:
-                return 'success-high'
-            elif rate >= 50:
-                return 'success-medium'
-            return 'success-low'
-    except:
-        pass
-    return ''
+                return 'success-high'    # Green for 100%
+            elif rate > 0:
+                return 'success-medium'  # Yellow for partial
+            return 'success-low'        # Amber for 0%
+        
+        # Handle numeric values in regular cells
+        value = int(cell.strip())
+        
+        # If we have the current row and it contains test suite info
+        if current_row and '(' in current_row[0] and 'cases)' in current_row[0]:
+            total = int(current_row[0].split('(')[1].split()[0])
+            rate = (value / total) * 100 if total > 0 else 0
+            
+            if rate == 100:
+                return 'success-high'    # Green for 100%
+            elif rate > 0:
+                return 'success-medium'  # Yellow for partial
+            return 'success-low'        # Amber for 0%
+        
+        # For totals row, only color non-zero values
+        return 'success-low' if value == 0 else 'success-medium'
+        
+    except Exception as e:
+        print(f"Error processing cell '{cell}': {e}")
+        return ''
 
 def generate_html_report(rows: list, results: Dict[str, Any]) -> str:
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -159,10 +191,10 @@ def generate_html_report(rows: list, results: Dict[str, Any]) -> str:
                 vertical-align: middle;
                 margin-left: 4px;
             }}
-            .success-high {{ background-color: #90EE90; }}   /* Light green */
-            .success-medium {{ background-color: #FFD700; }} /* Yellow */
-            .success-low {{ background-color: #FFA07A; }}    /* Light salmon */
-            .na {{ background-color: #f2f2f2; }}            /* Light gray */
+            .success-high {{ background-color: #98FB98; }}   /* Pale green for 100% */
+            .success-medium {{ background-color: #FFD700; }} /* Gold for partial */
+            .success-low {{ background-color: #FF8C00; }}    /* Dark orange for 0% */
+            .na {{ background-color: #f2f2f2; }}            /* Light gray for N/A */
         </style>
         <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     </head>
@@ -196,7 +228,7 @@ def generate_html_report(rows: list, results: Dict[str, Any]) -> str:
             if i == 0:
                 html += f"<td class='left'>{cell}</td>"
             else:
-                success_class = get_success_class(cell)
+                success_class = get_success_class(cell, row)
                 html += f"<td class='{success_class}'>{cell}</td>"
         html += "</tr>\n"
 
@@ -208,7 +240,7 @@ def generate_html_report(rows: list, results: Dict[str, Any]) -> str:
             if i == 0:
                 html += f"<td class='left'>{cell}</td>"
             else:
-                success_class = get_success_class(cell)
+                success_class = get_success_class(cell, row)
                 html += f"<td class='{success_class}'>{cell}</td>"
         html += "</tr>\n"
 

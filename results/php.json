@@ -147,13 +147,6 @@
                 "success_rate": 90.9090909090909
             }
         },
-        "control\/or.json": {
-            "jwadhams": {
-                "passed": 0,
-                "total": 0,
-                "success_rate": 0
-            }
-        },
         "truthiness.json": {
             "jwadhams": {
                 "passed": 8,
@@ -196,13 +189,6 @@
                 "success_rate": 0
             }
         },
-        "scopes.json": {
-            "jwadhams": {
-                "passed": 0,
-                "total": 4,
-                "success_rate": 0
-            }
-        },
         "throw.json": {
             "jwadhams": {
                 "passed": 0,
@@ -235,8 +221,8 @@
     "totals": {
         "jwadhams": {
             "passed": 617,
-            "total": 942,
-            "success_rate": 65.49893842887474
+            "total": 938,
+            "success_rate": 65.77825159914713
         }
     }
 }

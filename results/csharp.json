@@ -147,13 +147,6 @@
         "success_rate": 90.9090909090909
       }
     },
-    "control/or.json": {
-      "jsonlogicnet": {
-        "total": 0,
-        "passed": 0,
-        "success_rate": 0.0
-      }
-    },
     "truthiness.json": {
       "jsonlogicnet": {
         "total": 13,
@@ -196,13 +189,6 @@
         "success_rate": 0.0
       }
     },
-    "scopes.json": {
-      "jsonlogicnet": {
-        "total": 4,
-        "passed": 0,
-        "success_rate": 0.0
-      }
-    },
     "throw.json": {
       "jsonlogicnet": {
         "total": 3,
@@ -234,10 +220,10 @@
   },
   "totals": {
     "jsonlogicnet": {
-      "total": 942,
+      "total": 938,
       "passed": 592,
-      "success_rate": 62.84501061571125
+      "success_rate": 63.11300639658849
     }
   },
-  "timestamp": "2025-02-16T04:36:30.358208Z"
+  "timestamp": "2025-02-20T03:57:34.245416Z"
 }
