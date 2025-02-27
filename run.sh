@@ -1,4 +1,4 @@
-
+rm results/*
 
 cd js-tests
 sh run.sh
