@@ -28,11 +28,25 @@
         "success_rate" : 0.0
       }
     },
+    "array/none.json" : {
+      "jamsesso" : {
+        "total" : 13,
+        "passed" : 11,
+        "success_rate" : 84.61538461538461
+      }
+    },
     "comparison/lessThan.json" : {
       "jamsesso" : {
         "total" : 45,
         "passed" : 29,
         "success_rate" : 64.44444444444444
+      }
+    },
+    "scopes.json" : {
+      "jamsesso" : {
+        "total" : 4,
+        "passed" : 0,
+        "success_rate" : 0.0
       }
     },
     "throw.json" : {
@@ -42,11 +56,25 @@
         "success_rate" : 0.0
       }
     },
+    "control/doublebang.json" : {
+      "jamsesso" : {
+        "total" : 23,
+        "passed" : 22,
+        "success_rate" : 95.65217391304348
+      }
+    },
     "control/if.json" : {
       "jamsesso" : {
         "total" : 44,
         "passed" : 40,
         "success_rate" : 90.9090909090909
+      }
+    },
+    "array/merge.json" : {
+      "jamsesso" : {
+        "total" : 8,
+        "passed" : 3,
+        "success_rate" : 37.5
       }
     },
     "arithmetic/minus.json" : {
@@ -77,11 +105,32 @@
         "success_rate" : 0.0
       }
     },
+    "array/map.json" : {
+      "jamsesso" : {
+        "total" : 14,
+        "passed" : 7,
+        "success_rate" : 50.0
+      }
+    },
+    "array/reduce.json" : {
+      "jamsesso" : {
+        "total" : 9,
+        "passed" : 8,
+        "success_rate" : 88.88888888888889
+      }
+    },
     "arithmetic/divide.json" : {
       "jamsesso" : {
         "total" : 31,
         "passed" : 5,
         "success_rate" : 16.129032258064516
+      }
+    },
+    "string/substr.json" : {
+      "jamsesso" : {
+        "total" : 12,
+        "passed" : 11,
+        "success_rate" : 91.66666666666667
       }
     },
     "coalesce.json" : {
@@ -98,11 +147,32 @@
         "success_rate" : 0.0
       }
     },
+    "string/cat.json" : {
+      "jamsesso" : {
+        "total" : 9,
+        "passed" : 8,
+        "success_rate" : 88.88888888888889
+      }
+    },
     "comparison/lessThanEquals.json" : {
       "jamsesso" : {
         "total" : 20,
         "passed" : 8,
         "success_rate" : 40.0
+      }
+    },
+    "control/not.json" : {
+      "jamsesso" : {
+        "total" : 23,
+        "passed" : 22,
+        "success_rate" : 95.65217391304348
+      }
+    },
+    "try.extra.json" : {
+      "jamsesso" : {
+        "total" : 1,
+        "passed" : 0,
+        "success_rate" : 0.0
       }
     },
     "arithmetic/plus.json" : {
@@ -126,6 +196,13 @@
         "success_rate" : 62.857142857142854
       }
     },
+    "string/in.json" : {
+      "jamsesso" : {
+        "total" : 8,
+        "passed" : 8,
+        "success_rate" : 100.0
+      }
+    },
     "arithmetic/modulo.json" : {
       "jamsesso" : {
         "total" : 31,
@@ -140,6 +217,13 @@
         "success_rate" : 94.24460431654676
       }
     },
+    "control/or.json" : {
+      "jamsesso" : {
+        "total" : 24,
+        "passed" : 22,
+        "success_rate" : 91.66666666666667
+      }
+    },
     "comparison/greaterThan.json" : {
       "jamsesso" : {
         "total" : 35,
@@ -147,11 +231,25 @@
         "success_rate" : 54.285714285714285
       }
     },
+    "array/all.json" : {
+      "jamsesso" : {
+        "total" : 12,
+        "passed" : 10,
+        "success_rate" : 83.33333333333333
+      }
+    },
     "val-compat.json" : {
       "jamsesso" : {
         "total" : 60,
         "passed" : 0,
         "success_rate" : 0.0
+      }
+    },
+    "array/filter.json" : {
+      "jamsesso" : {
+        "total" : 12,
+        "passed" : 6,
+        "success_rate" : 50.0
       }
     },
     "iterators.extra.json" : {
@@ -166,6 +264,20 @@
         "total" : 28,
         "passed" : 5,
         "success_rate" : 17.857142857142858
+      }
+    },
+    "array/some.json" : {
+      "jamsesso" : {
+        "total" : 13,
+        "passed" : 11,
+        "success_rate" : 84.61538461538461
+      }
+    },
+    "val.extra.json" : {
+      "jamsesso" : {
+        "total" : 3,
+        "passed" : 0,
+        "success_rate" : 0.0
       }
     },
     "control/and.json" : {
@@ -220,10 +332,10 @@
   },
   "totals" : {
     "jamsesso" : {
-      "total" : 938,
-      "passed" : 545,
-      "success_rate" : 58.10234541577825
+      "total" : 1126,
+      "passed" : 694,
+      "success_rate" : 61.63410301953819
     }
   },
-  "timestamp" : "2025-02-20T03:57:33.324224Z"
+  "timestamp" : "2025-02-27T09:32:25.382654Z"
 }
