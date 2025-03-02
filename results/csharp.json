@@ -147,6 +147,97 @@
         "success_rate": 90.9090909090909
       }
     },
+    "control/or.json": {
+      "jsonlogicnet": {
+        "total": 24,
+        "passed": 22,
+        "success_rate": 91.66666666666666
+      }
+    },
+    "control/not.json": {
+      "jsonlogicnet": {
+        "total": 23,
+        "passed": 21,
+        "success_rate": 91.30434782608695
+      }
+    },
+    "control/doublebang.json": {
+      "jsonlogicnet": {
+        "total": 23,
+        "passed": 21,
+        "success_rate": 91.30434782608695
+      }
+    },
+    "string/in.json": {
+      "jsonlogicnet": {
+        "total": 8,
+        "passed": 8,
+        "success_rate": 100.0
+      }
+    },
+    "string/cat.json": {
+      "jsonlogicnet": {
+        "total": 9,
+        "passed": 7,
+        "success_rate": 77.77777777777779
+      }
+    },
+    "string/substr.json": {
+      "jsonlogicnet": {
+        "total": 12,
+        "passed": 9,
+        "success_rate": 75.0
+      }
+    },
+    "array/map.json": {
+      "jsonlogicnet": {
+        "total": 14,
+        "passed": 12,
+        "success_rate": 85.71428571428571
+      }
+    },
+    "array/filter.json": {
+      "jsonlogicnet": {
+        "total": 12,
+        "passed": 3,
+        "success_rate": 25.0
+      }
+    },
+    "array/reduce.json": {
+      "jsonlogicnet": {
+        "total": 9,
+        "passed": 8,
+        "success_rate": 88.88888888888889
+      }
+    },
+    "array/merge.json": {
+      "jsonlogicnet": {
+        "total": 8,
+        "passed": 7,
+        "success_rate": 87.5
+      }
+    },
+    "array/all.json": {
+      "jsonlogicnet": {
+        "total": 12,
+        "passed": 10,
+        "success_rate": 83.33333333333334
+      }
+    },
+    "array/some.json": {
+      "jsonlogicnet": {
+        "total": 13,
+        "passed": 11,
+        "success_rate": 84.61538461538461
+      }
+    },
+    "array/none.json": {
+      "jsonlogicnet": {
+        "total": 13,
+        "passed": 11,
+        "success_rate": 84.61538461538461
+      }
+    },
     "truthiness.json": {
       "jsonlogicnet": {
         "total": 13,
@@ -189,6 +280,13 @@
         "success_rate": 0.0
       }
     },
+    "scopes.json": {
+      "jsonlogicnet": {
+        "total": 4,
+        "passed": 0,
+        "success_rate": 0.0
+      }
+    },
     "throw.json": {
       "jsonlogicnet": {
         "total": 3,
@@ -203,9 +301,23 @@
         "success_rate": 0.0
       }
     },
+    "try.extra.json": {
+      "jsonlogicnet": {
+        "total": 1,
+        "passed": 0,
+        "success_rate": 0.0
+      }
+    },
     "val.json": {
       "jsonlogicnet": {
         "total": 13,
+        "passed": 0,
+        "success_rate": 0.0
+      }
+    },
+    "val.extra.json": {
+      "jsonlogicnet": {
+        "total": 3,
         "passed": 0,
         "success_rate": 0.0
       }
@@ -220,10 +332,10 @@
   },
   "totals": {
     "jsonlogicnet": {
-      "total": 938,
-      "passed": 592,
-      "success_rate": 63.11300639658849
+      "total": 1126,
+      "passed": 742,
+      "success_rate": 65.89698046181172
     }
   },
-  "timestamp": "2025-02-20T03:57:34.245416Z"
+  "timestamp": "2025-02-27T09:32:26.306148Z"
 }

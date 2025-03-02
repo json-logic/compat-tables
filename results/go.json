@@ -110,6 +110,76 @@
         "total": 32
       }
     },
+    "array/all.json": {
+      "DiegoHOliveira": {
+        "passed": 9,
+        "total": 12
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 12
+      }
+    },
+    "array/filter.json": {
+      "DiegoHOliveira": {
+        "passed": 10,
+        "total": 12
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 12
+      }
+    },
+    "array/map.json": {
+      "DiegoHOliveira": {
+        "passed": 11,
+        "total": 14
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 14
+      }
+    },
+    "array/merge.json": {
+      "DiegoHOliveira": {
+        "passed": 7,
+        "total": 8
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 8
+      }
+    },
+    "array/none.json": {
+      "DiegoHOliveira": {
+        "passed": 10,
+        "total": 13
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 13
+      }
+    },
+    "array/reduce.json": {
+      "DiegoHOliveira": {
+        "passed": 6,
+        "total": 9
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 9
+      }
+    },
+    "array/some.json": {
+      "DiegoHOliveira": {
+        "passed": 10,
+        "total": 13
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 13
+      }
+    },
     "chained.json": {
       "DiegoHOliveira": {
         "passed": 2,
@@ -230,6 +300,16 @@
         "total": 25
       }
     },
+    "control/doublebang.json": {
+      "DiegoHOliveira": {
+        "passed": 21,
+        "total": 23
+      },
+      "HuanTeng": {
+        "passed": 22,
+        "total": 23
+      }
+    },
     "control/if.json": {
       "DiegoHOliveira": {
         "passed": 40,
@@ -238,6 +318,26 @@
       "HuanTeng": {
         "passed": 42,
         "total": 44
+      }
+    },
+    "control/not.json": {
+      "DiegoHOliveira": {
+        "passed": 21,
+        "total": 23
+      },
+      "HuanTeng": {
+        "passed": 22,
+        "total": 23
+      }
+    },
+    "control/or.json": {
+      "DiegoHOliveira": {
+        "passed": 18,
+        "total": 24
+      },
+      "HuanTeng": {
+        "passed": 21,
+        "total": 24
       }
     },
     "exists.json": {
@@ -260,6 +360,46 @@
         "total": 34
       }
     },
+    "scopes.json": {
+      "DiegoHOliveira": {
+        "passed": 0,
+        "total": 4
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 4
+      }
+    },
+    "string/cat.json": {
+      "DiegoHOliveira": {
+        "passed": 8,
+        "total": 9
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 9
+      }
+    },
+    "string/in.json": {
+      "DiegoHOliveira": {
+        "passed": 8,
+        "total": 8
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 8
+      }
+    },
+    "string/substr.json": {
+      "DiegoHOliveira": {
+        "passed": 10,
+        "total": 12
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 12
+      }
+    },
     "throw.json": {
       "DiegoHOliveira": {
         "passed": 0,
@@ -278,6 +418,16 @@
       "HuanTeng": {
         "passed": 9,
         "total": 13
+      }
+    },
+    "try.extra.json": {
+      "DiegoHOliveira": {
+        "passed": 0,
+        "total": 1
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 1
       }
     },
     "try.json": {
@@ -300,6 +450,16 @@
         "total": 60
       }
     },
+    "val.extra.json": {
+      "DiegoHOliveira": {
+        "passed": 0,
+        "total": 3
+      },
+      "HuanTeng": {
+        "passed": 0,
+        "total": 3
+      }
+    },
     "val.json": {
       "DiegoHOliveira": {
         "passed": 0,
@@ -313,14 +473,14 @@
   },
   "totals": {
     "DiegoHOliveira": {
-      "passed": 626,
-      "total": 938
+      "passed": 775,
+      "total": 1126
     },
     "HuanTeng": {
-      "passed": 424,
-      "total": 938
+      "passed": 489,
+      "total": 1126
     }
   },
-  "timestamp": "2025-02-20T03:57:28Z",
+  "timestamp": "2025-02-27T09:32:21Z",
   "go_version": "go1.23.0"
 }

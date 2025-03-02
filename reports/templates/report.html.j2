@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Logic Implementation Comparison</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <h1>JSON Logic Implementation Comparison</h1>
+            <p class="generated-time"><i class="fas fa-calendar-alt"></i> Generated on: {{ generated_time }}</p>
+        </div>
+        
+        <div class="header-bottom">
+            <div class="language-filter">
+                <div class="filter-header">
+                    <h3>Filter by Language:</h3>
+                    <div class="filter-options">
+                        <label class="filter-option" data-language="all">
+                            <input type="checkbox" name="language-filter" value="all" checked>
+                            <span class="filter-name">All</span>
+                        </label>
+                        
+                        {# Extract unique languages from engine icons #}
+                        {% set languages = {} %}
+                        {% for engine in engines %}
+                            {% if engine.icon and engine.icon is string %}
+                                {% set icon_class = engine.icon|string %}
+                                {% if 'devicon-' in icon_class %}
+                                    {% set lang = icon_class.split('devicon-')[1].split('-')[0] %}
+                                    {% if lang not in languages %}
+                                        {% set _ = languages.update({lang: 'devicon-' + lang + '-plain'}) %}
+                                    {% endif %}
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                        
+                        {# Create one checkbox per language #}
+                        {% for lang, icon_class in languages.items() %}
+                            <label class="filter-option" data-language="{{ lang }}">
+                                <input type="checkbox" name="language-filter" value="{{ lang }}" checked>
+                                <span class="filter-name">{{ lang|capitalize }}</span>
+                                <i class="{{ icon_class }}"></i>
+                            </label>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="legend">
+                <span class="legend-item"><span class="legend-color success-high"></span> Full Support</span>
+                <span class="legend-item"><span class="legend-color success-medium"></span> Partial Support</span>
+                <span class="legend-item"><span class="legend-color success-low"></span> No Support</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr class='header-row'>
+                        <th>{{ table_headers.test_suite }}</th>
+                        {% for engine in engines %}
+                            {% if engine.icon and engine.icon is string %}
+                                {% set icon_class = engine.icon|string %}
+                                {% if 'devicon-' in icon_class %}
+                                    {% set lang = icon_class.split('devicon-')[1].split('-')[0] %}
+                                    <th data-engine="{{ engine.name }}" data-language="{{ lang }}" class="engine-column">{{ engine.name }} {{ engine.icon|safe }}</th>
+                                {% else %}
+                                    <th data-engine="{{ engine.name }}" class="engine-column">{{ engine.name }} {{ engine.icon|safe }}</th>
+                                {% endif %}
+                            {% else %}
+                                <th data-engine="{{ engine.name }}" class="engine-column">{{ engine.name }} {% if engine.icon %}{{ engine.icon|safe }}{% endif %}</th>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for suite in test_suites %}
+                        <tr>
+                            <td class='left'>{{ suite.name }} ({{ suite.total_cases }} cases)</td>
+                            {% for result in suite.results %}
+                                {% set engine = engines[loop.index0] %}
+                                {% if engine.icon and engine.icon is string %}
+                                    {% set icon_class = engine.icon|string %}
+                                    {% if 'devicon-' in icon_class %}
+                                        {% set lang = icon_class.split('devicon-')[1].split('-')[0] %}
+                                        <td class='{{ result.class }}' data-engine="{{ engine.name }}" data-language="{{ lang }}">{{ result.value }}</td>
+                                    {% else %}
+                                        <td class='{{ result.class }}' data-engine="{{ engine.name }}">{{ result.value }}</td>
+                                    {% endif %}
+                                {% else %}
+                                    <td class='{{ result.class }}' data-engine="{{ engine.name }}">{{ result.value }}</td>
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr class='total-row'>
+                        <td class='left'>TOTAL</td>
+                        {% for total in totals %}
+                            {% set engine = engines[loop.index0] %}
+                            {% if engine.icon and engine.icon is string %}
+                                {% set icon_class = engine.icon|string %}
+                                {% if 'devicon-' in icon_class %}
+                                    {% set lang = icon_class.split('devicon-')[1].split('-')[0] %}
+                                    <td class='{{ total.class }}' data-engine="{{ engine.name }}" data-language="{{ lang }}">{{ total.value }}</td>
+                                {% else %}
+                                    <td class='{{ total.class }}' data-engine="{{ engine.name }}">{{ total.value }}</td>
+                                {% endif %}
+                            {% else %}
+                                <td class='{{ total.class }}' data-engine="{{ engine.name }}">{{ total.value }}</td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+
+                    <tr class='success-row'>
+                        <td class='left'>Success Rate</td>
+                        {% for rate in success_rates %}
+                            {% set engine = engines[loop.index0] %}
+                            {% if engine.icon and engine.icon is string %}
+                                {% set icon_class = engine.icon|string %}
+                                {% if 'devicon-' in icon_class %}
+                                    {% set lang = icon_class.split('devicon-')[1].split('-')[0] %}
+                                    <td class='{{ rate.class }}' data-engine="{{ engine.name }}" data-language="{{ lang }}">{{ rate.value }}</td>
+                                {% else %}
+                                    <td class='{{ rate.class }}' data-engine="{{ engine.name }}">{{ rate.value }}</td>
+                                {% endif %}
+                            {% else %}
+                                <td class='{{ rate.class }}' data-engine="{{ engine.name }}">{{ rate.value }}</td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <p>JSON Logic Compatibility Tables</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('input[name="language-filter"]');
+            const allCheckbox = document.querySelector('input[value="all"]');
+            
+            // Function to update table visibility based on selected filters
+            function updateTableVisibility() {
+                // Handle "All" checkbox special case
+                if (allCheckbox.checked) {
+                    document.querySelectorAll('th[data-language], td[data-language]').forEach(cell => {
+                        cell.style.display = '';
+                    });
+                    
+                    // Check all other checkboxes
+                    checkboxes.forEach(checkbox => {
+                        if (checkbox.value !== 'all') {
+                            checkbox.checked = true;
+                            const label = checkbox.closest('.filter-option');
+                            label.classList.add('active');
+                        }
+                    });
+                    
+                    return;
+                }
+                
+                // Get selected languages
+                const selectedLanguages = Array.from(checkboxes)
+                    .filter(checkbox => checkbox.checked && checkbox.value !== 'all')
+                    .map(checkbox => checkbox.value);
+                
+                // Update cell visibility - only hide/show table cells, not the filter options
+                document.querySelectorAll('th[data-language], td[data-language]').forEach(cell => {
+                    const language = cell.getAttribute('data-language');
+                    if (selectedLanguages.includes(language)) {
+                        cell.style.display = '';
+                    } else {
+                        cell.style.display = 'none';
+                    }
+                });
+                
+                // Update filter option appearance - but don't hide them
+                checkboxes.forEach(checkbox => {
+                    if (checkbox.value !== 'all') {
+                        const label = checkbox.closest('.filter-option');
+                        if (checkbox.checked) {
+                            label.classList.add('active');
+                        } else {
+                            label.classList.remove('active');
+                        }
+                    }
+                });
+                
+                // Update "All" checkbox
+                const languageCheckboxes = Array.from(checkboxes).filter(checkbox => checkbox.value !== 'all');
+                const allChecked = languageCheckboxes.every(checkbox => checkbox.checked);
+                const noneChecked = languageCheckboxes.every(checkbox => !checkbox.checked);
+                
+                allCheckbox.checked = allChecked;
+                const allLabel = allCheckbox.closest('.filter-option');
+                
+                if (allChecked) {
+                    allLabel.classList.add('active');
+                } else {
+                    allLabel.classList.remove('active');
+                }
+                
+                // If no languages selected, select all
+                if (noneChecked) {
+                    allCheckbox.checked = true;
+                    allLabel.classList.add('active');
+                    updateTableVisibility();
+                }
+            }
+            
+            // Add event listeners to checkboxes
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    if (checkbox.value === 'all' && checkbox.checked) {
+                        // If "All" is checked, check all other boxes
+                        checkboxes.forEach(cb => {
+                            cb.checked = true;
+                            const label = cb.closest('.filter-option');
+                            label.classList.add('active');
+                        });
+                    } else if (checkbox.value === 'all' && !checkbox.checked) {
+                        // If "All" is unchecked, uncheck all other boxes
+                        checkboxes.forEach(cb => {
+                            cb.checked = false;
+                            const label = cb.closest('.filter-option');
+                            label.classList.remove('active');
+                        });
+                    } else {
+                        // If a language checkbox changed, update "All" checkbox
+                        const languageCheckboxes = Array.from(checkboxes).filter(cb => cb.value !== 'all');
+                        const allChecked = languageCheckboxes.every(cb => cb.checked);
+                        allCheckbox.checked = allChecked;
+                        
+                        const allLabel = allCheckbox.closest('.filter-option');
+                        if (allChecked) {
+                            allLabel.classList.add('active');
+                        } else {
+                            allLabel.classList.remove('active');
+                        }
+                    }
+                    
+                    updateTableVisibility();
+                });
+            });
+            
+            // Initialize table visibility
+            updateTableVisibility();
+        });
+    </script>
+</body>
+</html> 
