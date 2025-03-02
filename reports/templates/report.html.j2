@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Logic Implementation Comparison</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+</head>
+<body>
+    <h1>JSON Logic Implementation Comparison</h1>
+    <p>Generated on: {{ generated_time }}</p>
+    <table>
+        <tr class='header-row'>
+            <th>{{ table_headers.test_suite }}</th>
+            {% for engine in engines %}
+                <th>{{ engine.name }} {% if engine.icon %}{{ engine.icon|safe }}{% endif %}</th>
+            {% endfor %}
+        </tr>
+
+        {% for suite in test_suites %}
+            <tr>
+                <td class='left'>{{ suite.name }} ({{ suite.total_cases }} cases)</td>
+                {% for result in suite.results %}
+                    <td class='{{ result.class }}'>{{ result.value }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+
+        <tr class='total-row'>
+            <td class='left'>TOTAL</td>
+            {% for total in totals %}
+                <td class='{{ total.class }}'>{{ total.value }}</td>
+            {% endfor %}
+        </tr>
+
+        <tr class='success-row'>
+            <td class='left'>Success Rate</td>
+            {% for rate in success_rates %}
+                <td class='{{ rate.class }}'>{{ rate.value }}</td>
+            {% endfor %}
+        </tr>
+    </table>
+</body>
+</html> 

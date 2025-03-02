@@ -1,90 +1,1465 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSON Logic Implementation Comparison</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+</head>
+<body>
+    <h1>JSON Logic Implementation Comparison</h1>
+    <p>Generated on: 2025-03-02 12:33:26</p>
+    <table>
+        <tr class='header-row'>
+            <th>Test Suite</th>
+            
+                <th>jsonlogicnet <i class="devicon-csharp-plain"></i></th>
+            
+                <th>DiegoHOliveira <i class="devicon-go-original-wordmark"></i></th>
+            
+                <th>HuanTeng <i class="devicon-go-original-wordmark"></i></th>
+            
+                <th>jamsesso <i class="devicon-java-plain"></i></th>
+            
+                <th>json-logic-engine <i class="devicon-javascript-plain"></i></th>
+            
+                <th>json-logic-js <i class="devicon-javascript-plain"></i></th>
+            
+                <th>jwadhams <i class="devicon-php-plain"></i></th>
+            
+                <th>Panzi <i class="devicon-python-plain"></i></th>
+            
+                <th>Qubit <i class="devicon-python-plain"></i></th>
+            
+                <th>DataLogic <i class="devicon-rust-original"></i></th>
+            
+                <th>JsonLogic <i class="devicon-rust-original"></i></th>
+            
+                <th>JsonLogicRs <i class="devicon-rust-original"></i></th>
+            
+        </tr>
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>JSON Logic Implementation Comparison</title>
-        <style>
-            body { font-family: -apple-system, system-ui, sans-serif; margin: 20px; }
-            table { border-collapse: collapse; width: 100%; }
-            th, td { 
-                padding: 8px; 
-                text-align: center;  /* Center align all cells by default */
-            }
-            th { background-color: #f2f2f2; }
-            td { border-bottom: 1px solid #ddd; }
-            .left { text-align: left; }  /* For test suite names */
-            .total-row { font-weight: bold; border-top: 2px solid #000; }
-            .success-row { font-weight: bold; }
-            .header-row th { border-bottom: 2px solid #000; }
-            .language-icon { 
-                width: 16px;
-                height: 16px;
-                vertical-align: middle;
-                margin-left: 4px;
-            }
-            .success-high { background-color: #98FB98; }   /* Pale green for 100% */
-            .success-medium { background-color: #FFD700; } /* Gold for partial */
-            .success-low { background-color: #FF8C00; }    /* Dark orange for 0% */
-            .na { background-color: #f2f2f2; }            /* Light gray for N/A */
-        </style>
-        <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    </head>
-    <body>
-        <h1>JSON Logic Implementation Comparison</h1>
-        <p>Generated on: 2025-02-27 15:02:26</p>
-        <table>
-    <tr class='header-row'><th rowspan='2'>Test Suite</th><tr class='header-row'><th>jsonlogicnet <i class="devicon-csharp-plain"></i></th><th>DiegoHOliveira <i class="devicon-go-original-wordmark"></i></th><th>HuanTeng <i class="devicon-go-original-wordmark"></i></th><th>jamsesso <i class="devicon-java-plain"></i></th><th>json-logic-engine <i class="devicon-javascript-plain"></i></th><th>json-logic-js <i class="devicon-javascript-plain"></i></th><th>jwadhams <i class="devicon-php-plain"></i></th><th>Panzi <i class="devicon-python-plain"></i></th><th>Qubit <i class="devicon-python-plain"></i></th><th>DataLogic <i class="devicon-rust-original"></i></th><th>JsonLogic <i class="devicon-rust-original"></i></th><th>JsonLogicRs <i class="devicon-rust-original"></i></th></tr>
-<tr><td class='left'>additional.json (4 cases)               </td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  4</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  4</td><td class='success-low'>  0</td><td class='success-low'>  0</td></tr>
-<tr><td class='left'>arithmetic/divide.extra.json (3 cases)  </td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  3</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  3</td><td class='success-low'>  0</td><td class='success-low'>  0</td></tr>
-<tr><td class='left'>arithmetic/divide.json (31 cases)       </td><td class='success-medium'> 18</td><td class='success-medium'> 14</td><td class='success-medium'>  5</td><td class='success-medium'>  5</td><td class='success-high'> 31</td><td class='success-medium'>  6</td><td class='success-medium'>  6</td><td class='success-medium'>  6</td><td class='success-medium'>  5</td><td class='success-high'> 31</td><td class='success-medium'> 16</td><td class='success-medium'>  5</td></tr>
-<tr><td class='left'>arithmetic/minus.extra.json (3 cases)   </td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  3</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  3</td><td class='success-low'>  0</td><td class='success-low'>  0</td></tr>
-<tr><td class='left'>arithmetic/minus.json (22 cases)        </td><td class='success-medium'> 16</td><td class='success-medium'> 13</td><td class='success-medium'>  9</td><td class='success-medium'>  7</td><td class='success-high'> 22</td><td class='success-medium'> 13</td><td class='success-medium'> 12</td><td class='success-medium'> 12</td><td class='success-medium'> 11</td><td class='success-high'> 22</td><td class='success-medium'> 14</td><td class='success-medium'> 13</td></tr>
-<tr><td class='left'>arithmetic/modulo.extra.json (2 cases)  </td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  2</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  2</td><td class='success-low'>  0</td><td class='success-low'>  0</td></tr>
-<tr><td class='left'>arithmetic/modulo.json (31 cases)       </td><td class='success-medium'> 13</td><td class='success-medium'> 11</td><td class='success-medium'> 11</td><td class='success-medium'> 11</td><td class='success-high'> 31</td><td class='success-medium'> 12</td><td class='success-medium'> 11</td><td class='success-medium'>  9</td><td class='success-medium'>  7</td><td class='success-high'> 31</td><td class='success-medium'> 28</td><td class='success-medium'> 10</td></tr>
-<tr><td class='left'>arithmetic/multiply.extra.json (3 cases)</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  3</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  3</td><td class='success-low'>  0</td><td class='success-low'>  0</td></tr>
-<tr><td class='left'>arithmetic/multiply.json (28 cases)     </td><td class='success-medium'> 21</td><td class='success-medium'> 18</td><td class='success-medium'> 17</td><td class='success-medium'> 16</td><td class='success-high'> 28</td><td class='success-medium'> 13</td><td class='success-medium'> 23</td><td class='success-medium'> 23</td><td class='success-medium'> 21</td><td class='success-high'> 28</td><td class='success-medium'> 15</td><td class='success-medium'> 16</td></tr>
-<tr><td class='left'>arithmetic/plus.extra.json (3 cases)    </td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  3</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  3</td><td class='success-low'>  0</td><td class='success-low'>  0</td></tr>
-<tr><td class='left'>arithmetic/plus.json (32 cases)         </td><td class='success-medium'> 22</td><td class='success-medium'> 18</td><td class='success-medium'> 17</td><td class='success-medium'> 16</td><td class='success-high'> 32</td><td class='success-medium'> 17</td><td class='success-medium'> 23</td><td class='success-medium'> 21</td><td class='success-medium'> 19</td><td class='success-high'> 32</td><td class='success-medium'> 24</td><td class='success-medium'> 17</td></tr>
-<tr><td class='left'>array/all.json (12 cases)               </td><td class='success-medium'> 10</td><td class='success-medium'>  9</td><td class='success-low'>  0</td><td class='success-medium'> 10</td><td class='success-medium'> 10</td><td class='success-medium'> 10</td><td class='success-medium'> 10</td><td class='success-medium'> 10</td><td class='success-medium'> 10</td><td class='success-high'> 12</td><td class='success-medium'> 10</td><td class='success-medium'> 10</td></tr>
-<tr><td class='left'>array/filter.json (12 cases)            </td><td class='success-medium'>  3</td><td class='success-medium'> 10</td><td class='success-low'>  0</td><td class='success-medium'>  6</td><td class='success-medium'> 10</td><td class='success-medium'> 10</td><td class='success-medium'> 10</td><td class='success-medium'> 10</td><td class='success-medium'> 10</td><td class='success-high'> 12</td><td class='success-medium'> 10</td><td class='success-medium'> 10</td></tr>
-<tr><td class='left'>array/map.json (14 cases)               </td><td class='success-medium'> 12</td><td class='success-medium'> 11</td><td class='success-low'>  0</td><td class='success-medium'>  7</td><td class='success-medium'> 12</td><td class='success-medium'> 12</td><td class='success-medium'> 12</td><td class='success-medium'> 12</td><td class='success-medium'> 12</td><td class='success-high'> 14</td><td class='success-medium'> 12</td><td class='success-medium'> 12</td></tr>
-<tr><td class='left'>array/merge.json (8 cases)              </td><td class='success-medium'>  7</td><td class='success-medium'>  7</td><td class='success-low'>  0</td><td class='success-medium'>  3</td><td class='success-high'>  8</td><td class='success-high'>  8</td><td class='success-medium'>  7</td><td class='success-high'>  8</td><td class='success-high'>  8</td><td class='success-high'>  8</td><td class='success-high'>  8</td><td class='success-high'>  8</td></tr>
-<tr><td class='left'>array/none.json (13 cases)              </td><td class='success-medium'> 11</td><td class='success-medium'> 10</td><td class='success-low'>  0</td><td class='success-medium'> 11</td><td class='success-medium'> 11</td><td class='success-medium'> 11</td><td class='success-medium'> 11</td><td class='success-medium'> 11</td><td class='success-medium'> 11</td><td class='success-high'> 13</td><td class='success-medium'> 11</td><td class='success-medium'> 11</td></tr>
-<tr><td class='left'>array/reduce.json (9 cases)             </td><td class='success-medium'>  8</td><td class='success-medium'>  6</td><td class='success-low'>  0</td><td class='success-medium'>  8</td><td class='success-high'>  9</td><td class='success-medium'>  8</td><td class='success-high'>  9</td><td class='success-high'>  9</td><td class='success-medium'>  8</td><td class='success-high'>  9</td><td class='success-medium'>  8</td><td class='success-medium'>  8</td></tr>
-<tr><td class='left'>array/some.json (13 cases)              </td><td class='success-medium'> 11</td><td class='success-medium'> 10</td><td class='success-low'>  0</td><td class='success-medium'> 11</td><td class='success-medium'> 11</td><td class='success-medium'> 11</td><td class='success-medium'> 11</td><td class='success-medium'> 11</td><td class='success-medium'> 10</td><td class='success-high'> 13</td><td class='success-medium'> 11</td><td class='success-medium'> 11</td></tr>
-<tr><td class='left'>chained.json (7 cases)                  </td><td class='success-medium'>  2</td><td class='success-medium'>  2</td><td class='success-medium'>  2</td><td class='success-medium'>  3</td><td class='success-high'>  7</td><td class='success-medium'>  2</td><td class='success-medium'>  2</td><td class='success-medium'>  2</td><td class='success-medium'>  2</td><td class='success-high'>  7</td><td class='success-medium'>  2</td><td class='success-medium'>  2</td></tr>
-<tr><td class='left'>coalesce.json (15 cases)                </td><td class='success-low'>  0</td><td class='success-medium'>  2</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'> 15</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'> 15</td><td class='success-low'>  0</td><td class='success-low'>  0</td></tr>
-<tr><td class='left'>comparison/greaterThan.json (35 cases)  </td><td class='success-medium'> 18</td><td class='success-medium'> 26</td><td class='success-medium'> 22</td><td class='success-medium'> 19</td><td class='success-high'> 35</td><td class='success-medium'> 24</td><td class='success-medium'> 24</td><td class='success-medium'> 25</td><td class='success-medium'> 22</td><td class='success-high'> 35</td><td class='success-medium'> 23</td><td class='success-medium'> 26</td></tr>
-<tr><td class='left'>comparison/greaterThanEquals.json (28 cases)</td><td class='success-medium'> 11</td><td class='success-medium'> 18</td><td class='success-medium'>  8</td><td class='success-medium'>  5</td><td class='success-high'> 28</td><td class='success-medium'> 17</td><td class='success-medium'> 17</td><td class='success-medium'> 18</td><td class='success-medium'> 14</td><td class='success-high'> 28</td><td class='success-medium'> 17</td><td class='success-medium'> 18</td></tr>
-<tr><td class='left'>comparison/lessThan.json (45 cases)     </td><td class='success-medium'> 28</td><td class='success-medium'> 36</td><td class='success-medium'> 30</td><td class='success-medium'> 29</td><td class='success-high'> 45</td><td class='success-medium'> 35</td><td class='success-medium'> 35</td><td class='success-medium'> 35</td><td class='success-medium'> 33</td><td class='success-high'> 45</td><td class='success-medium'> 35</td><td class='success-medium'> 36</td></tr>
-<tr><td class='left'>comparison/lessThanEquals.json (20 cases)</td><td class='success-medium'> 10</td><td class='success-medium'> 13</td><td class='success-medium'>  9</td><td class='success-medium'>  8</td><td class='success-high'> 20</td><td class='success-medium'> 13</td><td class='success-medium'> 13</td><td class='success-medium'> 13</td><td class='success-medium'> 10</td><td class='success-high'> 20</td><td class='success-medium'> 12</td><td class='success-medium'> 13</td></tr>
-<tr><td class='left'>comparison/softEquals.json (35 cases)   </td><td class='success-medium'> 25</td><td class='success-medium'> 23</td><td class='success-low'>  0</td><td class='success-medium'> 22</td><td class='success-high'> 35</td><td class='success-medium'> 24</td><td class='success-medium'> 25</td><td class='success-medium'> 25</td><td class='success-medium'> 22</td><td class='success-high'> 35</td><td class='success-medium'> 24</td><td class='success-medium'> 22</td></tr>
-<tr><td class='left'>comparison/softNotEquals.json (34 cases)</td><td class='success-medium'> 24</td><td class='success-medium'> 23</td><td class='success-low'>  0</td><td class='success-medium'> 22</td><td class='success-high'> 34</td><td class='success-medium'> 23</td><td class='success-medium'> 24</td><td class='success-medium'> 24</td><td class='success-medium'> 22</td><td class='success-high'> 34</td><td class='success-medium'> 23</td><td class='success-medium'> 22</td></tr>
-<tr><td class='left'>comparison/strictEquals.json (31 cases) </td><td class='success-medium'> 27</td><td class='success-medium'> 26</td><td class='success-medium'> 27</td><td class='success-medium'> 25</td><td class='success-high'> 31</td><td class='success-medium'> 26</td><td class='success-medium'> 26</td><td class='success-medium'> 24</td><td class='success-medium'> 25</td><td class='success-high'> 31</td><td class='success-medium'> 26</td><td class='success-medium'> 25</td></tr>
-<tr><td class='left'>comparison/strictNotEquals.json (30 cases)</td><td class='success-medium'> 27</td><td class='success-medium'> 27</td><td class='success-medium'> 27</td><td class='success-medium'> 25</td><td class='success-high'> 30</td><td class='success-medium'> 26</td><td class='success-medium'> 26</td><td class='success-medium'> 24</td><td class='success-medium'> 25</td><td class='success-high'> 30</td><td class='success-medium'> 26</td><td class='success-medium'> 25</td></tr>
-<tr><td class='left'>compatible.json (278 cases)             </td><td class='success-medium'>260</td><td class='success-high'>278</td><td class='success-medium'>167</td><td class='success-medium'>262</td><td class='success-high'>278</td><td class='success-high'>278</td><td class='success-high'>278</td><td class='success-medium'>277</td><td class='success-medium'>277</td><td class='success-high'>278</td><td class='success-medium'>270</td><td class='success-medium'>276</td></tr>
-<tr><td class='left'>control/and.json (25 cases)             </td><td class='success-medium'> 22</td><td class='success-medium'> 22</td><td class='success-medium'> 22</td><td class='success-medium'> 22</td><td class='success-high'> 25</td><td class='success-medium'> 23</td><td class='success-medium'> 24</td><td class='success-medium'> 23</td><td class='success-medium'> 24</td><td class='success-high'> 25</td><td class='success-medium'> 20</td><td class='success-medium'> 23</td></tr>
-<tr><td class='left'>control/doublebang.json (23 cases)      </td><td class='success-medium'> 21</td><td class='success-medium'> 21</td><td class='success-medium'> 22</td><td class='success-medium'> 22</td><td class='success-high'> 23</td><td class='success-high'> 23</td><td class='success-medium'> 21</td><td class='success-high'> 23</td><td class='success-medium'> 21</td><td class='success-high'> 23</td><td class='success-high'> 23</td><td class='success-medium'> 22</td></tr>
-<tr><td class='left'>control/if.json (44 cases)              </td><td class='success-medium'> 40</td><td class='success-medium'> 40</td><td class='success-medium'> 42</td><td class='success-medium'> 40</td><td class='success-high'> 44</td><td class='success-medium'> 42</td><td class='success-medium'> 40</td><td class='success-medium'> 42</td><td class='success-medium'> 40</td><td class='success-high'> 44</td><td class='success-medium'> 38</td><td class='success-medium'> 43</td></tr>
-<tr><td class='left'>control/not.json (23 cases)             </td><td class='success-medium'> 21</td><td class='success-medium'> 21</td><td class='success-medium'> 22</td><td class='success-medium'> 22</td><td class='success-high'> 23</td><td class='success-high'> 23</td><td class='success-medium'> 21</td><td class='success-high'> 23</td><td class='success-medium'> 21</td><td class='success-high'> 23</td><td class='success-high'> 23</td><td class='success-medium'> 22</td></tr>
-<tr><td class='left'>control/or.json (24 cases)              </td><td class='success-medium'> 22</td><td class='success-medium'> 18</td><td class='success-medium'> 21</td><td class='success-medium'> 22</td><td class='success-high'> 24</td><td class='success-medium'> 22</td><td class='success-medium'> 23</td><td class='success-medium'> 22</td><td class='success-medium'> 23</td><td class='success-high'> 24</td><td class='success-medium'> 19</td><td class='success-medium'> 22</td></tr>
-<tr><td class='left'>exists.json (8 cases)                   </td><td class='success-low'>  0</td><td class='success-medium'>  4</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  8</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  8</td><td class='success-low'>  0</td><td class='success-low'>  0</td></tr>
-<tr><td class='left'>iterators.extra.json (34 cases)         </td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'> 34</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'> 34</td><td class='success-medium'>  1</td><td class='success-low'>  0</td></tr>
-<tr><td class='left'>scopes.json (4 cases)                   </td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  4</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  4</td><td class='success-low'>  0</td><td class='success-low'>  0</td></tr>
-<tr><td class='left'>string/cat.json (9 cases)               </td><td class='success-medium'>  7</td><td class='success-medium'>  8</td><td class='success-low'>  0</td><td class='success-medium'>  8</td><td class='success-high'>  9</td><td class='success-high'>  9</td><td class='success-medium'>  8</td><td class='success-medium'>  7</td><td class='success-medium'>  7</td><td class='success-high'>  9</td><td class='success-medium'>  8</td><td class='success-medium'>  8</td></tr>
-<tr><td class='left'>string/in.json (8 cases)                </td><td class='success-high'>  8</td><td class='success-high'>  8</td><td class='success-low'>  0</td><td class='success-high'>  8</td><td class='success-high'>  8</td><td class='success-high'>  8</td><td class='success-high'>  8</td><td class='success-high'>  8</td><td class='success-high'>  8</td><td class='success-high'>  8</td><td class='success-high'>  8</td><td class='success-high'>  8</td></tr>
-<tr><td class='left'>string/substr.json (12 cases)           </td><td class='success-medium'>  9</td><td class='success-medium'> 10</td><td class='success-low'>  0</td><td class='success-medium'> 11</td><td class='success-medium'> 11</td><td class='success-high'> 12</td><td class='success-high'> 12</td><td class='success-high'> 12</td><td class='success-medium'> 11</td><td class='success-medium'> 11</td><td class='success-high'> 12</td><td class='success-medium'> 11</td></tr>
-<tr><td class='left'>throw.json (3 cases)                    </td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  3</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  3</td><td class='success-low'>  0</td><td class='success-low'>  0</td></tr>
-<tr><td class='left'>truthiness.json (13 cases)              </td><td class='success-medium'>  8</td><td class='success-medium'> 11</td><td class='success-medium'>  9</td><td class='success-medium'>  8</td><td class='success-high'> 13</td><td class='success-medium'>  9</td><td class='success-medium'>  8</td><td class='success-medium'>  9</td><td class='success-medium'>  8</td><td class='success-high'> 13</td><td class='success-medium'>  9</td><td class='success-high'> 13</td></tr>
-<tr><td class='left'>try.extra.json (1 cases)                </td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  1</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  1</td><td class='success-low'>  0</td><td class='success-low'>  0</td></tr>
-<tr><td class='left'>try.json (18 cases)                     </td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'> 18</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'> 18</td><td class='success-low'>  0</td><td class='success-low'>  0</td></tr>
-<tr><td class='left'>val-compat.json (60 cases)              </td><td class='success-low'>  0</td><td class='success-medium'>  1</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'> 60</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'> 60</td><td class='success-low'>  0</td><td class='success-medium'>  1</td></tr>
-<tr><td class='left'>val.extra.json (3 cases)                </td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  3</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'>  3</td><td class='success-low'>  0</td><td class='success-low'>  0</td></tr>
-<tr><td class='left'>val.json (13 cases)                     </td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'> 13</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-low'>  0</td><td class='success-high'> 13</td><td class='success-low'>  0</td><td class='success-low'>  0</td></tr>
-<tr class='total-row'><td class='left'>TOTAL                         </td><td class='success-medium'>742</td><td class='success-medium'>775</td><td class='success-medium'>489</td><td class='success-medium'>694</td><td class='success-medium'>1115</td><td class='success-medium'>770</td><td class='success-medium'>780</td><td class='success-medium'>778</td><td class='success-medium'>747</td><td class='success-medium'>1125</td><td class='success-medium'>786</td><td class='success-medium'>769</td></tr>
-<tr class='success-row'><td class='left'>Success Rate                  </td><td class='success-medium'> 65.90%</td><td class='success-medium'> 68.83%</td><td class='success-medium'> 43.43%</td><td class='success-medium'> 61.63%</td><td class='success-medium'> 99.02%</td><td class='success-medium'> 68.38%</td><td class='success-medium'> 69.27%</td><td class='success-medium'> 69.09%</td><td class='success-medium'> 66.34%</td><td class='success-medium'> 99.91%</td><td class='success-medium'> 69.80%</td><td class='success-medium'> 68.29%</td></tr>
+        
+            <tr>
+                <td class='left'>additional.json (4 cases)</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  4</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  4</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>arithmetic/divide.extra.json (3 cases)</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  3</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  3</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>arithmetic/divide.json (31 cases)</td>
+                
+                    <td class='success-medium'> 18</td>
+                
+                    <td class='success-medium'> 14</td>
+                
+                    <td class='success-medium'>  5</td>
+                
+                    <td class='success-medium'>  5</td>
+                
+                    <td class='success-high'> 31</td>
+                
+                    <td class='success-medium'>  6</td>
+                
+                    <td class='success-medium'>  6</td>
+                
+                    <td class='success-medium'>  6</td>
+                
+                    <td class='success-medium'>  5</td>
+                
+                    <td class='success-high'> 31</td>
+                
+                    <td class='success-medium'> 16</td>
+                
+                    <td class='success-medium'>  5</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>arithmetic/minus.extra.json (3 cases)</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  3</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  3</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>arithmetic/minus.json (22 cases)</td>
+                
+                    <td class='success-medium'> 16</td>
+                
+                    <td class='success-medium'> 13</td>
+                
+                    <td class='success-medium'>  9</td>
+                
+                    <td class='success-medium'>  7</td>
+                
+                    <td class='success-high'> 22</td>
+                
+                    <td class='success-medium'> 13</td>
+                
+                    <td class='success-medium'> 12</td>
+                
+                    <td class='success-medium'> 12</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-high'> 22</td>
+                
+                    <td class='success-medium'> 14</td>
+                
+                    <td class='success-medium'> 13</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>arithmetic/modulo.extra.json (2 cases)</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  2</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  2</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>arithmetic/modulo.json (31 cases)</td>
+                
+                    <td class='success-medium'> 13</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-high'> 31</td>
+                
+                    <td class='success-medium'> 12</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'>  9</td>
+                
+                    <td class='success-medium'>  7</td>
+                
+                    <td class='success-high'> 31</td>
+                
+                    <td class='success-medium'> 28</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>arithmetic/multiply.extra.json (3 cases)</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  3</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  3</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>arithmetic/multiply.json (28 cases)</td>
+                
+                    <td class='success-medium'> 21</td>
+                
+                    <td class='success-medium'> 18</td>
+                
+                    <td class='success-medium'> 17</td>
+                
+                    <td class='success-medium'> 16</td>
+                
+                    <td class='success-high'> 28</td>
+                
+                    <td class='success-medium'> 13</td>
+                
+                    <td class='success-medium'> 23</td>
+                
+                    <td class='success-medium'> 23</td>
+                
+                    <td class='success-medium'> 21</td>
+                
+                    <td class='success-high'> 28</td>
+                
+                    <td class='success-medium'> 15</td>
+                
+                    <td class='success-medium'> 16</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>arithmetic/plus.extra.json (3 cases)</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  3</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  3</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>arithmetic/plus.json (32 cases)</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+                    <td class='success-medium'> 18</td>
+                
+                    <td class='success-medium'> 17</td>
+                
+                    <td class='success-medium'> 16</td>
+                
+                    <td class='success-high'> 32</td>
+                
+                    <td class='success-medium'> 17</td>
+                
+                    <td class='success-medium'> 23</td>
+                
+                    <td class='success-medium'> 21</td>
+                
+                    <td class='success-medium'> 19</td>
+                
+                    <td class='success-high'> 32</td>
+                
+                    <td class='success-medium'> 24</td>
+                
+                    <td class='success-medium'> 17</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>array/all.json (12 cases)</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-medium'>  9</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-high'> 12</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>array/filter.json (12 cases)</td>
+                
+                    <td class='success-medium'>  3</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-medium'>  6</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-high'> 12</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>array/map.json (14 cases)</td>
+                
+                    <td class='success-medium'> 12</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-medium'>  7</td>
+                
+                    <td class='success-medium'> 12</td>
+                
+                    <td class='success-medium'> 12</td>
+                
+                    <td class='success-medium'> 12</td>
+                
+                    <td class='success-medium'> 12</td>
+                
+                    <td class='success-medium'> 12</td>
+                
+                    <td class='success-high'> 14</td>
+                
+                    <td class='success-medium'> 12</td>
+                
+                    <td class='success-medium'> 12</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>array/merge.json (8 cases)</td>
+                
+                    <td class='success-medium'>  7</td>
+                
+                    <td class='success-medium'>  7</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-medium'>  3</td>
+                
+                    <td class='success-high'>  8</td>
+                
+                    <td class='success-high'>  8</td>
+                
+                    <td class='success-medium'>  7</td>
+                
+                    <td class='success-high'>  8</td>
+                
+                    <td class='success-high'>  8</td>
+                
+                    <td class='success-high'>  8</td>
+                
+                    <td class='success-high'>  8</td>
+                
+                    <td class='success-high'>  8</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>array/none.json (13 cases)</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-high'> 13</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>array/reduce.json (9 cases)</td>
+                
+                    <td class='success-medium'>  8</td>
+                
+                    <td class='success-medium'>  6</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-medium'>  8</td>
+                
+                    <td class='success-high'>  9</td>
+                
+                    <td class='success-medium'>  8</td>
+                
+                    <td class='success-high'>  9</td>
+                
+                    <td class='success-high'>  9</td>
+                
+                    <td class='success-medium'>  8</td>
+                
+                    <td class='success-high'>  9</td>
+                
+                    <td class='success-medium'>  8</td>
+                
+                    <td class='success-medium'>  8</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>array/some.json (13 cases)</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-high'> 13</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>chained.json (7 cases)</td>
+                
+                    <td class='success-medium'>  2</td>
+                
+                    <td class='success-medium'>  2</td>
+                
+                    <td class='success-medium'>  2</td>
+                
+                    <td class='success-medium'>  3</td>
+                
+                    <td class='success-high'>  7</td>
+                
+                    <td class='success-medium'>  2</td>
+                
+                    <td class='success-medium'>  2</td>
+                
+                    <td class='success-medium'>  2</td>
+                
+                    <td class='success-medium'>  2</td>
+                
+                    <td class='success-high'>  7</td>
+                
+                    <td class='success-medium'>  2</td>
+                
+                    <td class='success-medium'>  2</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>coalesce.json (15 cases)</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-medium'>  2</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'> 15</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'> 15</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>comparison/greaterThan.json (35 cases)</td>
+                
+                    <td class='success-medium'> 18</td>
+                
+                    <td class='success-medium'> 26</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+                    <td class='success-medium'> 19</td>
+                
+                    <td class='success-high'> 35</td>
+                
+                    <td class='success-medium'> 24</td>
+                
+                    <td class='success-medium'> 24</td>
+                
+                    <td class='success-medium'> 25</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+                    <td class='success-high'> 35</td>
+                
+                    <td class='success-medium'> 23</td>
+                
+                    <td class='success-medium'> 26</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>comparison/greaterThanEquals.json (28 cases)</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'> 18</td>
+                
+                    <td class='success-medium'>  8</td>
+                
+                    <td class='success-medium'>  5</td>
+                
+                    <td class='success-high'> 28</td>
+                
+                    <td class='success-medium'> 17</td>
+                
+                    <td class='success-medium'> 17</td>
+                
+                    <td class='success-medium'> 18</td>
+                
+                    <td class='success-medium'> 14</td>
+                
+                    <td class='success-high'> 28</td>
+                
+                    <td class='success-medium'> 17</td>
+                
+                    <td class='success-medium'> 18</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>comparison/lessThan.json (45 cases)</td>
+                
+                    <td class='success-medium'> 28</td>
+                
+                    <td class='success-medium'> 36</td>
+                
+                    <td class='success-medium'> 30</td>
+                
+                    <td class='success-medium'> 29</td>
+                
+                    <td class='success-high'> 45</td>
+                
+                    <td class='success-medium'> 35</td>
+                
+                    <td class='success-medium'> 35</td>
+                
+                    <td class='success-medium'> 35</td>
+                
+                    <td class='success-medium'> 33</td>
+                
+                    <td class='success-high'> 45</td>
+                
+                    <td class='success-medium'> 35</td>
+                
+                    <td class='success-medium'> 36</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>comparison/lessThanEquals.json (20 cases)</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-medium'> 13</td>
+                
+                    <td class='success-medium'>  9</td>
+                
+                    <td class='success-medium'>  8</td>
+                
+                    <td class='success-high'> 20</td>
+                
+                    <td class='success-medium'> 13</td>
+                
+                    <td class='success-medium'> 13</td>
+                
+                    <td class='success-medium'> 13</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-high'> 20</td>
+                
+                    <td class='success-medium'> 12</td>
+                
+                    <td class='success-medium'> 13</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>comparison/softEquals.json (35 cases)</td>
+                
+                    <td class='success-medium'> 25</td>
+                
+                    <td class='success-medium'> 23</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+                    <td class='success-high'> 35</td>
+                
+                    <td class='success-medium'> 24</td>
+                
+                    <td class='success-medium'> 25</td>
+                
+                    <td class='success-medium'> 25</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+                    <td class='success-high'> 35</td>
+                
+                    <td class='success-medium'> 24</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>comparison/softNotEquals.json (34 cases)</td>
+                
+                    <td class='success-medium'> 24</td>
+                
+                    <td class='success-medium'> 23</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+                    <td class='success-high'> 34</td>
+                
+                    <td class='success-medium'> 23</td>
+                
+                    <td class='success-medium'> 24</td>
+                
+                    <td class='success-medium'> 24</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+                    <td class='success-high'> 34</td>
+                
+                    <td class='success-medium'> 23</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>comparison/strictEquals.json (31 cases)</td>
+                
+                    <td class='success-medium'> 27</td>
+                
+                    <td class='success-medium'> 26</td>
+                
+                    <td class='success-medium'> 27</td>
+                
+                    <td class='success-medium'> 25</td>
+                
+                    <td class='success-high'> 31</td>
+                
+                    <td class='success-medium'> 26</td>
+                
+                    <td class='success-medium'> 26</td>
+                
+                    <td class='success-medium'> 24</td>
+                
+                    <td class='success-medium'> 25</td>
+                
+                    <td class='success-high'> 31</td>
+                
+                    <td class='success-medium'> 26</td>
+                
+                    <td class='success-medium'> 25</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>comparison/strictNotEquals.json (30 cases)</td>
+                
+                    <td class='success-medium'> 27</td>
+                
+                    <td class='success-medium'> 27</td>
+                
+                    <td class='success-medium'> 27</td>
+                
+                    <td class='success-medium'> 25</td>
+                
+                    <td class='success-high'> 30</td>
+                
+                    <td class='success-medium'> 26</td>
+                
+                    <td class='success-medium'> 26</td>
+                
+                    <td class='success-medium'> 24</td>
+                
+                    <td class='success-medium'> 25</td>
+                
+                    <td class='success-high'> 30</td>
+                
+                    <td class='success-medium'> 26</td>
+                
+                    <td class='success-medium'> 25</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>compatible.json (278 cases)</td>
+                
+                    <td class='success-medium'>260</td>
+                
+                    <td class='success-high'>278</td>
+                
+                    <td class='success-medium'>167</td>
+                
+                    <td class='success-medium'>262</td>
+                
+                    <td class='success-high'>278</td>
+                
+                    <td class='success-high'>278</td>
+                
+                    <td class='success-high'>278</td>
+                
+                    <td class='success-medium'>277</td>
+                
+                    <td class='success-medium'>277</td>
+                
+                    <td class='success-high'>278</td>
+                
+                    <td class='success-medium'>270</td>
+                
+                    <td class='success-medium'>276</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>control/and.json (25 cases)</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+                    <td class='success-high'> 25</td>
+                
+                    <td class='success-medium'> 23</td>
+                
+                    <td class='success-medium'> 24</td>
+                
+                    <td class='success-medium'> 23</td>
+                
+                    <td class='success-medium'> 24</td>
+                
+                    <td class='success-high'> 25</td>
+                
+                    <td class='success-medium'> 20</td>
+                
+                    <td class='success-medium'> 23</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>control/doublebang.json (23 cases)</td>
+                
+                    <td class='success-medium'> 21</td>
+                
+                    <td class='success-medium'> 21</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+                    <td class='success-high'> 23</td>
+                
+                    <td class='success-high'> 23</td>
+                
+                    <td class='success-medium'> 21</td>
+                
+                    <td class='success-high'> 23</td>
+                
+                    <td class='success-medium'> 21</td>
+                
+                    <td class='success-high'> 23</td>
+                
+                    <td class='success-high'> 23</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>control/if.json (44 cases)</td>
+                
+                    <td class='success-medium'> 40</td>
+                
+                    <td class='success-medium'> 40</td>
+                
+                    <td class='success-medium'> 42</td>
+                
+                    <td class='success-medium'> 40</td>
+                
+                    <td class='success-high'> 44</td>
+                
+                    <td class='success-medium'> 42</td>
+                
+                    <td class='success-medium'> 40</td>
+                
+                    <td class='success-medium'> 42</td>
+                
+                    <td class='success-medium'> 40</td>
+                
+                    <td class='success-high'> 44</td>
+                
+                    <td class='success-medium'> 38</td>
+                
+                    <td class='success-medium'> 43</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>control/not.json (23 cases)</td>
+                
+                    <td class='success-medium'> 21</td>
+                
+                    <td class='success-medium'> 21</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+                    <td class='success-high'> 23</td>
+                
+                    <td class='success-high'> 23</td>
+                
+                    <td class='success-medium'> 21</td>
+                
+                    <td class='success-high'> 23</td>
+                
+                    <td class='success-medium'> 21</td>
+                
+                    <td class='success-high'> 23</td>
+                
+                    <td class='success-high'> 23</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>control/or.json (24 cases)</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+                    <td class='success-medium'> 18</td>
+                
+                    <td class='success-medium'> 21</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+                    <td class='success-high'> 24</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+                    <td class='success-medium'> 23</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+                    <td class='success-medium'> 23</td>
+                
+                    <td class='success-high'> 24</td>
+                
+                    <td class='success-medium'> 19</td>
+                
+                    <td class='success-medium'> 22</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>exists.json (8 cases)</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-medium'>  4</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  8</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  8</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>iterators.extra.json (34 cases)</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'> 34</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'> 34</td>
+                
+                    <td class='success-medium'>  1</td>
+                
+                    <td class='success-low'>  0</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>scopes.json (4 cases)</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  4</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  4</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>string/cat.json (9 cases)</td>
+                
+                    <td class='success-medium'>  7</td>
+                
+                    <td class='success-medium'>  8</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-medium'>  8</td>
+                
+                    <td class='success-high'>  9</td>
+                
+                    <td class='success-high'>  9</td>
+                
+                    <td class='success-medium'>  8</td>
+                
+                    <td class='success-medium'>  7</td>
+                
+                    <td class='success-medium'>  7</td>
+                
+                    <td class='success-high'>  9</td>
+                
+                    <td class='success-medium'>  8</td>
+                
+                    <td class='success-medium'>  8</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>string/in.json (8 cases)</td>
+                
+                    <td class='success-high'>  8</td>
+                
+                    <td class='success-high'>  8</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  8</td>
+                
+                    <td class='success-high'>  8</td>
+                
+                    <td class='success-high'>  8</td>
+                
+                    <td class='success-high'>  8</td>
+                
+                    <td class='success-high'>  8</td>
+                
+                    <td class='success-high'>  8</td>
+                
+                    <td class='success-high'>  8</td>
+                
+                    <td class='success-high'>  8</td>
+                
+                    <td class='success-high'>  8</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>string/substr.json (12 cases)</td>
+                
+                    <td class='success-medium'>  9</td>
+                
+                    <td class='success-medium'> 10</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-high'> 12</td>
+                
+                    <td class='success-high'> 12</td>
+                
+                    <td class='success-high'> 12</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-high'> 12</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>throw.json (3 cases)</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  3</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  3</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>truthiness.json (13 cases)</td>
+                
+                    <td class='success-medium'>  8</td>
+                
+                    <td class='success-medium'> 11</td>
+                
+                    <td class='success-medium'>  9</td>
+                
+                    <td class='success-medium'>  8</td>
+                
+                    <td class='success-high'> 13</td>
+                
+                    <td class='success-medium'>  9</td>
+                
+                    <td class='success-medium'>  8</td>
+                
+                    <td class='success-medium'>  9</td>
+                
+                    <td class='success-medium'>  8</td>
+                
+                    <td class='success-high'> 13</td>
+                
+                    <td class='success-medium'>  9</td>
+                
+                    <td class='success-high'> 13</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>try.extra.json (1 cases)</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  1</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  1</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>try.json (18 cases)</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'> 18</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'> 18</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>val-compat.json (60 cases)</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-medium'>  1</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'> 60</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'> 60</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-medium'>  1</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>val.extra.json (3 cases)</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  3</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'>  3</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+            </tr>
+        
+            <tr>
+                <td class='left'>val.json (13 cases)</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'> 13</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-high'> 13</td>
+                
+                    <td class='success-low'>  0</td>
+                
+                    <td class='success-low'>  0</td>
+                
+            </tr>
+        
 
-        </table>
-    </body>
-    </html>
-    
+        <tr class='total-row'>
+            <td class='left'>TOTAL</td>
+            
+                <td class='success-medium'>742</td>
+            
+                <td class='success-medium'>775</td>
+            
+                <td class='success-medium'>489</td>
+            
+                <td class='success-medium'>694</td>
+            
+                <td class='success-medium'>1115</td>
+            
+                <td class='success-medium'>770</td>
+            
+                <td class='success-medium'>780</td>
+            
+                <td class='success-medium'>778</td>
+            
+                <td class='success-medium'>747</td>
+            
+                <td class='success-medium'>1125</td>
+            
+                <td class='success-medium'>786</td>
+            
+                <td class='success-medium'>769</td>
+            
+        </tr>
+
+        <tr class='success-row'>
+            <td class='left'>Success Rate</td>
+            
+                <td class='success-medium'> 65.90%</td>
+            
+                <td class='success-medium'> 68.83%</td>
+            
+                <td class='success-medium'> 43.43%</td>
+            
+                <td class='success-medium'> 61.63%</td>
+            
+                <td class='success-medium'> 99.02%</td>
+            
+                <td class='success-medium'> 68.38%</td>
+            
+                <td class='success-medium'> 69.27%</td>
+            
+                <td class='success-medium'> 69.09%</td>
+            
+                <td class='success-medium'> 66.34%</td>
+            
+                <td class='success-medium'> 99.91%</td>
+            
+                <td class='success-medium'> 69.80%</td>
+            
+                <td class='success-medium'> 68.29%</td>
+            
+        </tr>
+    </table>
+</body>
+</html> 
