@@ -83,7 +83,10 @@
                 <tbody>
                     {% for suite in test_suites %}
                         <tr>
-                            <td class='left'>{{ suite.name }} ({{ suite.total_cases }} cases)</td>
+                            <td class='left'>
+                                <div class="suite-name">{{ suite.name }}</div>
+                                <div class="case-count">({{ suite.total_cases }} cases)</div>
+                            </td>
                             {% for result in suite.results %}
                                 {% set engine = engines[loop.index0] %}
                                 {% if engine.icon and engine.icon is string %}
@@ -103,7 +106,9 @@
                 </tbody>
                 <tfoot>
                     <tr class='total-row'>
-                        <td class='left'>TOTAL</td>
+                        <td class='left'>
+                            <div class="suite-name">TOTAL</div>
+                        </td>
                         {% for total in totals %}
                             {% set engine = engines[loop.index0] %}
                             {% if engine.icon and engine.icon is string %}
@@ -121,7 +126,9 @@
                     </tr>
 
                     <tr class='success-row'>
-                        <td class='left'>Success Rate</td>
+                        <td class='left'>
+                            <div class="suite-name">Success Rate</div>
+                        </td>
                         {% for rate in success_rates %}
                             {% set engine = engines[loop.index0] %}
                             {% if engine.icon and engine.icon is string %}

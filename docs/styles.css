@@ -325,9 +325,28 @@ tr:hover {
     min-width: 200px;
 }
 
+/* Test suite name and case count styles */
+.suite-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.2rem;
+}
+
+.case-count {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: normal;
+}
+
 .total-row, .success-row { 
     font-weight: bold;
     background-color: var(--secondary-color);
+}
+
+.total-row .suite-name, 
+.success-row .suite-name {
+    font-size: 0.9rem;
+    font-weight: 700;
 }
 
 .total-row td, .success-row td {
