@@ -35,7 +35,6 @@ To generate the HTML compatibility report:
 The report shows a compatibility matrix of different JSON Logic implementations across various programming languages. Each cell shows the number of tests passed for a particular test suite and implementation.
 
 The color coding indicates:
-- 🟢 Green: 100% of tests passed
-- 🟡 Yellow: Some tests passed
-- 🟠 Orange: No tests passed
-- ⚪ Gray: Not applicable/not implemented
+- 🔵 Cyan: Full Support (100% of tests passed)
+- 🩷 Pink: Partial Support (some tests passed)
+- 🟣 Purple: No Support (no tests passed)
