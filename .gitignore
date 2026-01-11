@@ -2,3 +2,7 @@ debug/
 target/
 .DS_Store
 venv/
+
+# Claude Code
+.claude/
+
