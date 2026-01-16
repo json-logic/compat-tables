@@ -20,7 +20,7 @@ To generate the HTML compatibility report:
 
 2. Install the dependencies:
    ```bash
-   pip install -r requirements.txt
+   pip install -r reports/templates/requirements.txt
    ```
 
 3. Run the report generation script:
