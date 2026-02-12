@@ -45,5 +45,6 @@
     "try.extra.json",
     "val.json",
     "val.extra.json",
-    "val-compat.json"
+    "val-compat.json",
+    "var.extra.json"
 ]
