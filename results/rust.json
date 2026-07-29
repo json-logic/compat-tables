@@ -657,20 +657,34 @@
         "passed": 0,
         "total": 13
       }
+    },
+    "var.extra.json": {
+      "DataLogic": {
+        "passed": 12,
+        "total": 12
+      },
+      "JsonLogic": {
+        "passed": 12,
+        "total": 12
+      },
+      "JsonLogicRs": {
+        "passed": 12,
+        "total": 12
+      }
     }
   },
   "totals": {
     "DataLogic": {
-      "passed": 1126,
-      "total": 1126
+      "passed": 1138,
+      "total": 1138
     },
     "JsonLogic": {
-      "passed": 786,
-      "total": 1126
+      "passed": 798,
+      "total": 1138
     },
     "JsonLogicRs": {
-      "passed": 769,
-      "total": 1126
+      "passed": 781,
+      "total": 1138
     }
   }
 }

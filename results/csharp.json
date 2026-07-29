@@ -328,14 +328,21 @@
         "passed": 0,
         "success_rate": 0.0
       }
+    },
+    "var.extra.json": {
+      "jsonlogicnet": {
+        "total": 12,
+        "passed": 12,
+        "success_rate": 100.0
+      }
     }
   },
   "totals": {
     "jsonlogicnet": {
-      "total": 1126,
-      "passed": 742,
-      "success_rate": 65.89698046181172
+      "total": 1138,
+      "passed": 754,
+      "success_rate": 66.25659050966608
     }
   },
-  "timestamp": "2026-02-08T10:09:02.187182Z"
+  "timestamp": "2026-07-29T02:09:40.615465Z"
 }

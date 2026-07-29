@@ -469,18 +469,28 @@
         "passed": 0,
         "total": 13
       }
+    },
+    "var.extra.json": {
+      "DiegoHOliveira": {
+        "passed": 12,
+        "total": 12
+      },
+      "HuanTeng": {
+        "passed": 11,
+        "total": 12
+      }
     }
   },
   "totals": {
     "DiegoHOliveira": {
-      "passed": 775,
-      "total": 1126
+      "passed": 787,
+      "total": 1138
     },
     "HuanTeng": {
-      "passed": 489,
-      "total": 1126
+      "passed": 500,
+      "total": 1138
     }
   },
-  "timestamp": "2026-02-08T10:08:35Z",
+  "timestamp": "2026-07-29T02:09:16Z",
   "go_version": "go1.23.0"
 }

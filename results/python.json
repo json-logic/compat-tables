@@ -469,17 +469,27 @@
         "passed": 0,
         "total": 60
       }
+    },
+    "var.extra.json": {
+      "Qubit": {
+        "passed": 12,
+        "total": 12
+      },
+      "Panzi": {
+        "passed": 12,
+        "total": 12
+      }
     }
   },
   "totals": {
     "Qubit": {
-      "passed": 747,
-      "total": 1126,
+      "passed": 759,
+      "total": 1138,
       "success_rate": 0
     },
     "Panzi": {
-      "passed": 778,
-      "total": 1126,
+      "passed": 790,
+      "total": 1138,
       "success_rate": 0
     }
   }

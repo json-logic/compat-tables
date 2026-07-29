@@ -563,19 +563,31 @@
         "total": 60,
         "success_rate": 100
       }
+    },
+    "var.extra.json": {
+      "json-logic-js": {
+        "passed": 12,
+        "total": 12,
+        "success_rate": 100
+      },
+      "json-logic-engine": {
+        "passed": 12,
+        "total": 12,
+        "success_rate": 100
+      }
     }
   },
   "totals": {
     "json-logic-js": {
-      "passed": 770,
-      "total": 1126,
-      "success_rate": 68.38365896980461
+      "passed": 782,
+      "total": 1138,
+      "success_rate": 68.7170474516696
     },
     "json-logic-engine": {
-      "passed": 1115,
-      "total": 1126,
-      "success_rate": 99.02309058614564
+      "passed": 1127,
+      "total": 1138,
+      "success_rate": 99.03339191564147
     }
   },
-  "timestamp": "2026-02-08T10:08:13.207Z"
+  "timestamp": "2026-07-29T02:08:47.277Z"
 }

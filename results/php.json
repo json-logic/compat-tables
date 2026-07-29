@@ -328,13 +328,20 @@
                 "total": 60,
                 "success_rate": 0
             }
+        },
+        "var.extra.json": {
+            "jwadhams": {
+                "passed": 12,
+                "total": 12,
+                "success_rate": 100
+            }
         }
     },
     "totals": {
         "jwadhams": {
-            "passed": 780,
-            "total": 1126,
-            "success_rate": 69.27175843694494
+            "passed": 792,
+            "total": 1138,
+            "success_rate": 69.59578207381371
         }
     }
 }

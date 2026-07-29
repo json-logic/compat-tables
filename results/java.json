@@ -175,6 +175,13 @@
         "success_rate" : 0.0
       }
     },
+    "var.extra.json" : {
+      "jamsesso" : {
+        "total" : 12,
+        "passed" : 12,
+        "success_rate" : 100.0
+      }
+    },
     "arithmetic/plus.json" : {
       "jamsesso" : {
         "total" : 32,
@@ -332,10 +339,10 @@
   },
   "totals" : {
     "jamsesso" : {
-      "total" : 1126,
-      "passed" : 694,
-      "success_rate" : 61.63410301953819
+      "total" : 1138,
+      "passed" : 706,
+      "success_rate" : 62.03866432337434
     }
   },
-  "timestamp" : "2026-02-08T10:08:46.959238872Z"
+  "timestamp" : "2026-07-29T02:09:30.254940317Z"
 }
